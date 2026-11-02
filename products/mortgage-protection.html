@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Protection Insurance — Trust Life Solutions</title>
+<meta name="description" content="Mortgage protection life insurance: coverage sized to your home loan, simplified issue, family stays in the house. Independent advisor shops A-rated carriers.">
+<link rel="icon" type="image/svg+xml" href="/brand-assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057; --gold: #C5A572; --gold-soft: #E8D9B8; --cream: #F8F5EF; --cream-warm: #EFEBE0; --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3; --green: #5C8A4C; --red: #C84B4B; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', -apple-system, sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--navy); }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; color: var(--navy); line-height: 1.1; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; }
+  nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 32px; flex-wrap: wrap; gap: 16px; }
+  .logo svg { height: 36px; width: auto; }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--charcoal); opacity: 0.75; transition: opacity 0.2s; text-decoration: none; }
+  .nav-links a:hover { opacity: 1; color: var(--navy); }
+  .nav-cta { background: var(--navy); color: var(--cream) !important; padding: 10px 22px; border-radius: 2px; opacity: 1 !important; }
+  .nav-cta:hover { background: var(--navy-light); }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+  .hero { padding: 80px 0 60px; background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: var(--cream); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(ellipse at top right, rgba(197, 165, 114, 0.12) 0%, transparent 60%); pointer-events: none; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .breadcrumb { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; font-weight: 500; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+  .breadcrumb a:hover { opacity: 1; }
+  .hero h1 { font-size: clamp(38px, 5.5vw, 56px); color: var(--cream); margin-bottom: 22px; font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-lede { font-size: 19px; color: rgba(248, 245, 239, 0.82); line-height: 1.5; margin-bottom: 32px; max-width: 600px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 28px; font-size: 15px; font-weight: 500; border-radius: 2px; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: inherit; cursor: pointer; border: none; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-soft); }
+  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(248, 245, 239, 0.35); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-card { background: rgba(248, 245, 239, 0.06); border: 1px solid rgba(197, 165, 114, 0.3); padding: 32px; border-radius: 4px; backdrop-filter: blur(8px); }
+  .hero-card-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+  .hero-card h3 { color: var(--cream); font-size: 20px; margin-bottom: 18px; font-weight: 500; line-height: 1.3; }
+  .hero-card ul { list-style: none; }
+  .hero-card li { padding: 8px 0; border-bottom: 1px solid rgba(248, 245, 239, 0.08); font-size: 14px; color: rgba(248, 245, 239, 0.85); display: flex; gap: 10px; align-items: flex-start; }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li::before { content: '●'; color: var(--gold); font-size: 8px; margin-top: 7px; }
+  main { padding: 72px 0 96px; background: white; }
+  main h2 { font-size: 34px; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.02em; font-weight: 500; }
+  main h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  main h3 { font-size: 22px; margin: 40px 0 12px; color: var(--navy); font-weight: 500; }
+  main p { margin-bottom: 20px; color: var(--charcoal); font-size: 17px; line-height: 1.7; }
+  main ul, main ol { margin: 0 0 24px 24px; }
+  main ul li, main ol li { margin-bottom: 10px; color: var(--charcoal); line-height: 1.65; }
+  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  section.block { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section.block:last-of-type { border-bottom: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 32px 0; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 24px; } }
+  .pro-col, .con-col { padding: 28px; border-radius: 4px; }
+  .pro-col { background: rgba(92, 138, 76, 0.06); border-left: 3px solid var(--green); }
+  .con-col { background: rgba(200, 75, 75, 0.04); border-left: 3px solid var(--red); }
+  .pro-col h4, .con-col h4 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; }
+  .pro-col h4 { color: var(--green); }
+  .con-col h4 { color: var(--red); }
+  .pro-col ul, .con-col ul { margin: 0 0 0 20px; }
+  .pro-col li, .con-col li { margin-bottom: 8px; font-size: 15px; }
+  .fit-box { background: var(--cream); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 32px 0; border-radius: 2px; }
+  .fit-box h4 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
+  .fit-box ul { margin: 0 0 0 20px; }
+  .fit-box li { margin-bottom: 8px; font-size: 16px; }
+  .stat-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); margin: 40px 0; border: 1px solid var(--line); }
+  @media (max-width: 720px) { .stat-bar { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell { background: white; padding: 28px 20px; text-align: center; }
+  .stat-v { font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); font-weight: 500; margin-bottom: 4px; letter-spacing: -0.02em; }
+  .stat-l { font-size: 11px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; font-weight: 500; }
+  .cta-band { background: var(--navy); color: var(--cream); padding: 72px 0; text-align: center; }
+  .cta-band h2 { color: var(--cream); font-size: 36px; margin-bottom: 18px; font-weight: 400; }
+  .cta-band h2 em { color: var(--gold); font-style: italic; }
+  .cta-band p { font-size: 18px; color: rgba(248, 245, 239, 0.82); margin-bottom: 32px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
+  .cta-band .btn-primary:hover { background: var(--gold-soft); }
+  .faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--line); }
+  .faq summary { font-family: 'Fraunces', serif; font-size: 19px; color: var(--navy); cursor: pointer; list-style: none; padding-right: 32px; position: relative; font-weight: 500; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--gold); transition: transform 0.2s; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details p { margin: 14px 0 0; color: var(--stone); font-size: 16px; line-height: 1.65; }
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; line-height: 1.8; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .product-links { background: var(--cream); padding: 56px 0; }
+  .product-links h3 { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; text-align: center; }
+  .product-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .product-chip { padding: 10px 18px; background: white; border: 1px solid var(--line); border-radius: 24px; font-size: 14px; color: var(--navy); text-decoration: none; font-weight: 500; transition: all 0.2s; }
+  .product-chip:hover { border-color: var(--gold); color: var(--gold); }
+  .product-chip.current { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="220" height="36" viewBox="0 0 220 36" xmlns="http://www.w3.org/2000/svg">
+        <text x="110" y="25" font-family="Fraunces, Georgia, serif" font-size="21" font-weight="400" fill="#0A1F3D" text-anchor="middle" letter-spacing="-0.4">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="/#products">Coverage</a>
+      <a href="/#process">How It Works</a>
+      <a href="/#about">About</a>
+      <a href="/review">Policy Review</a>
+      <a href="/quote" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/#products">Coverage</a> &middot; Mortgage Protection</div>
+        <h1>Mortgage protection: <em>your family keeps the house.</em></h1>
+        <p class="hero-lede">Life insurance sized and structured to pay off your home if something happens to you. Simple, affordable, designed for homeowners. Your family doesn't scramble &mdash; they stay in the house.</p>
+        <div class="hero-cta">
+          <a href="/quote" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#learn" class="btn btn-secondary">Learn the Basics</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-eyebrow">Mortgage Protection at a Glance</div>
+        <h3>Coverage that matches your mortgage.</h3>
+        <ul>
+          <li>Face amount matched to your loan balance</li>
+          <li>Term matched to your mortgage term (e.g., 30 years)</li>
+          <li>Death benefit goes to your family &mdash; not the bank</li>
+          <li>Simplified issue &mdash; often no medical exam</li>
+          <li>Can include optional disability or critical illness riders</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="container narrow">
+
+<section class="block" id="learn">
+  <div class="eyebrow">The Basics</div>
+  <h2>What is <em>mortgage protection insurance</em>?</h2>
+  <p>Mortgage protection is, technically, term life insurance structured around a specific purpose: ensuring your mortgage doesn't become your family's crisis if you pass away. The face amount is typically set to match your current mortgage balance (or the original loan amount), and the term length matches your mortgage term.</p>
+  <p>The critical distinction from the bank-sold "mortgage insurance" (PMI or MIP) on your loan: mortgage protection insurance pays <em>your family</em>, not the bank. Your family decides how to use the money &mdash; pay off the mortgage, keep the mortgage and invest the lump sum, relocate, whatever makes sense.</p>
+  <p>Many mortgage protection policies are simplified issue: shorter application, often no medical exam, and faster approval than fully-underwritten term life. That speed matters for new homeowners who want protection in place quickly.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Who It's For</div>
+  <h2>Who mortgage protection <em>is a good fit</em> for</h2>
+  <div class="fit-box">
+    <h4>Mortgage protection is typically a strong fit if you&hellip;</h4>
+    <ul>
+      <li>Just bought a home or refinanced</li>
+      <li>Have a mortgage balance large enough that your family couldn't carry it without your income</li>
+      <li>Want simplified-issue coverage in place quickly</li>
+      <li>Don't have &mdash; or have insufficient &mdash; existing life insurance</li>
+      <li>Prefer one policy purpose-built for the mortgage vs. figuring out how much term life covers "everything"</li>
+    </ul>
+  </div>
+  <p>For many families, a better strategy is to buy a larger general-purpose term life policy that covers the mortgage <em>and</em> income replacement, college, and other needs &mdash; all in one policy. I'll talk through both approaches on our call so you pick what fits.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Strengths &amp; Trade-offs</div>
+  <h2>Honest pros and cons</h2>
+  <div class="two-col">
+    <div class="pro-col">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Purpose-built around your mortgage</li>
+        <li>Simplified issue &mdash; often no exam</li>
+        <li>Fast approval (often days)</li>
+        <li>Flexible riders (disability, critical illness, return-of-premium)</li>
+        <li>Death benefit paid to family, not lender</li>
+      </ul>
+    </div>
+    <div class="con-col">
+      <h4>Trade-offs</h4>
+      <ul>
+        <li>Usually more expensive per dollar than a fully-underwritten term policy</li>
+        <li>Single-purpose &mdash; doesn't cover income replacement or college</li>
+        <li>Smaller death benefit than a general-purpose term policy at the same premium</li>
+        <li>Return-of-premium riders increase cost significantly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Bank Insurance vs. Your Own Policy</div>
+  <h2>Why <em>your own policy</em> beats bank-offered coverage</h2>
+  <p>When you close on a mortgage, you'll likely be offered "mortgage life insurance" through the lender. Here's what you need to know:</p>
+  <ul>
+    <li><strong>Bank policies pay the bank, not your family.</strong> The money retires the loan and the policy ends.</li>
+    <li><strong>Bank policies often have a decreasing death benefit</strong> that shrinks as your mortgage amortizes &mdash; but the premium doesn't decrease.</li>
+    <li><strong>Bank policies are typically tied to the loan.</strong> If you refinance or sell, the coverage disappears.</li>
+    <li><strong>Your own mortgage protection policy pays your family</strong> a fixed face amount they can use however they choose.</li>
+    <li><strong>Your own policy stays with you</strong> regardless of refinance, moving, or other life changes.</li>
+  </ul>
+  <p>In nearly every case, your own mortgage protection policy is a better value than bank-offered coverage.</p>
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="stat-v">10&ndash;30</div><div class="stat-l">Year Terms</div></div>
+    <div class="stat-cell"><div class="stat-v">Simplified</div><div class="stat-l">Issue</div></div>
+    <div class="stat-cell"><div class="stat-v">Fixed</div><div class="stat-l">Premium</div></div>
+    <div class="stat-cell"><div class="stat-v">Family</div><div class="stat-l">Beneficiary</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">What Happens Next</div>
+  <h2>How I help you <em>shop mortgage protection</em></h2>
+  <ol>
+    <li><strong>Discovery call (15 min):</strong> We talk through your mortgage details, family situation, budget, and what other coverage you already have.</li>
+    <li><strong>Compare approaches:</strong> I show you the numbers on dedicated mortgage protection vs. a larger general-purpose term policy. Many times, the general term policy wins. Sometimes mortgage protection does.</li>
+    <li><strong>Rider decisions:</strong> If mortgage protection fits, we decide whether disability, critical illness, or return-of-premium riders make sense for your budget.</li>
+    <li><strong>Apply &amp; underwrite:</strong> Simplified issue policies can often be issued in days.</li>
+  </ol>
+  <p><a href="/quote"><strong>Request a free quote</strong></a> and I'll reach out within one business day.</p>
+</section>
+
+<section class="block faq">
+  <div class="eyebrow">Common Questions</div>
+  <h2>Frequently asked</h2>
+  <details>
+    <summary>Is "mortgage protection" just term life with a different label?</summary>
+    <p>Functionally, yes &mdash; most mortgage protection policies are term life policies marketed to homeowners. The packaging, riders, and simplified-issue underwriting are tailored for the use case, but the underlying product is term life. That's fine &mdash; the question is whether the specific structure works better for you than a generic term policy.</p>
+  </details>
+  <details>
+    <summary>Should I just buy regular term life instead?</summary>
+    <p>Often yes. A larger general-purpose term policy can cover your mortgage <em>and</em> other family needs at a lower cost per dollar of coverage. The exception is if you need coverage quickly, have minor health concerns that make full underwriting complicated, or want specific riders that mortgage protection products tend to include.</p>
+  </details>
+  <details>
+    <summary>What is return of premium (ROP)?</summary>
+    <p>A return-of-premium rider means that if you outlive the term of the policy without filing a claim, the insurance carrier returns all premiums you paid. ROP sounds great, but it significantly increases the premium &mdash; often by 2x or more. The money you "get back" could typically be invested elsewhere for better return. I'll run both with-ROP and without-ROP illustrations so you can compare.</p>
+  </details>
+  <details>
+    <summary>Can I get mortgage protection if I have a pre-existing condition?</summary>
+    <p>Usually, yes &mdash; simplified issue mortgage protection products are designed to accept mild-to-moderate health conditions. For more significant conditions, I may recommend a fully-underwritten term life policy instead, since the carrier-by-carrier underwriting flexibility often matters more than the simplified-issue speed.</p>
+  </details>
+  <details>
+    <summary>Does my mortgage lender get a copy of the policy?</summary>
+    <p>No. A mortgage protection policy you buy independently has nothing to do with your lender. You are the owner. Your beneficiaries &mdash; chosen by you, usually your spouse or family &mdash; are the recipients. The lender isn't involved.</p>
+  </details>
+</section>
+
+</div>
+</main>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Get a <em>mortgage protection quote</em> &mdash; free, no obligation.</h2>
+    <p>Homeowner-focused coverage, structured right, from carriers you can trust.</p>
+    <a href="/quote" class="btn btn-primary">Request My Free Quote</a>
+  </div>
+</section>
+
+<section class="product-links">
+  <div class="container">
+    <h3>Explore Other Coverage</h3>
+    <div class="product-chips">
+      <a class="product-chip" href="/products/term-life">Term Life</a>
+      <a class="product-chip" href="/products/whole-life">Whole Life</a>
+      <a class="product-chip" href="/products/iul">Indexed Universal Life</a>
+      <a class="product-chip" href="/products/final-expense">Final Expense</a>
+      <a class="product-chip current" href="/products/mortgage-protection">Mortgage Protection</a>
+      <a class="product-chip" href="/products/annuities">Annuities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. All rights reserved.<br>
+    <a href="/">Home</a> &middot;
+    <a href="/privacy">Privacy Policy</a> &middot;
+    <a href="/consumer-health-data-privacy">Consumer Health Data Privacy</a> &middot;
+    <a href="/terms">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whole Life Insurance — Trust Life Solutions</title>
+<meta name="description" content="Whole life insurance: permanent coverage with guaranteed cash value growth. Independent advisor shops 20+ A-rated carriers for the right whole life policy.">
+<link rel="icon" type="image/svg+xml" href="/brand-assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057; --gold: #C5A572; --gold-soft: #E8D9B8; --cream: #F8F5EF; --cream-warm: #EFEBE0; --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3; --green: #5C8A4C; --red: #C84B4B; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', -apple-system, sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--navy); }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; color: var(--navy); line-height: 1.1; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; }
+  nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 32px; flex-wrap: wrap; gap: 16px; }
+  .logo svg { height: 36px; width: auto; }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--charcoal); opacity: 0.75; transition: opacity 0.2s; text-decoration: none; }
+  .nav-links a:hover { opacity: 1; color: var(--navy); }
+  .nav-cta { background: var(--navy); color: var(--cream) !important; padding: 10px 22px; border-radius: 2px; opacity: 1 !important; }
+  .nav-cta:hover { background: var(--navy-light); }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+  .hero { padding: 80px 0 60px; background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: var(--cream); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(ellipse at top right, rgba(197, 165, 114, 0.12) 0%, transparent 60%); pointer-events: none; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .breadcrumb { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; font-weight: 500; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+  .breadcrumb a:hover { opacity: 1; }
+  .hero h1 { font-size: clamp(38px, 5.5vw, 56px); color: var(--cream); margin-bottom: 22px; font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-lede { font-size: 19px; color: rgba(248, 245, 239, 0.82); line-height: 1.5; margin-bottom: 32px; max-width: 600px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 28px; font-size: 15px; font-weight: 500; border-radius: 2px; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: inherit; cursor: pointer; border: none; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-soft); }
+  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(248, 245, 239, 0.35); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-card { background: rgba(248, 245, 239, 0.06); border: 1px solid rgba(197, 165, 114, 0.3); padding: 32px; border-radius: 4px; backdrop-filter: blur(8px); }
+  .hero-card-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+  .hero-card h3 { color: var(--cream); font-size: 20px; margin-bottom: 18px; font-weight: 500; line-height: 1.3; }
+  .hero-card ul { list-style: none; }
+  .hero-card li { padding: 8px 0; border-bottom: 1px solid rgba(248, 245, 239, 0.08); font-size: 14px; color: rgba(248, 245, 239, 0.85); display: flex; gap: 10px; align-items: flex-start; }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li::before { content: '●'; color: var(--gold); font-size: 8px; margin-top: 7px; }
+  main { padding: 72px 0 96px; background: white; }
+  main h2 { font-size: 34px; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.02em; font-weight: 500; }
+  main h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  main h3 { font-size: 22px; margin: 40px 0 12px; color: var(--navy); font-weight: 500; }
+  main p { margin-bottom: 20px; color: var(--charcoal); font-size: 17px; line-height: 1.7; }
+  main ul, main ol { margin: 0 0 24px 24px; }
+  main ul li, main ol li { margin-bottom: 10px; color: var(--charcoal); line-height: 1.65; }
+  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  section.block { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section.block:last-of-type { border-bottom: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 32px 0; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 24px; } }
+  .pro-col, .con-col { padding: 28px; border-radius: 4px; }
+  .pro-col { background: rgba(92, 138, 76, 0.06); border-left: 3px solid var(--green); }
+  .con-col { background: rgba(200, 75, 75, 0.04); border-left: 3px solid var(--red); }
+  .pro-col h4, .con-col h4 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; }
+  .pro-col h4 { color: var(--green); }
+  .con-col h4 { color: var(--red); }
+  .pro-col ul, .con-col ul { margin: 0 0 0 20px; }
+  .pro-col li, .con-col li { margin-bottom: 8px; font-size: 15px; }
+  .fit-box { background: var(--cream); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 32px 0; border-radius: 2px; }
+  .fit-box h4 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
+  .fit-box ul { margin: 0 0 0 20px; }
+  .fit-box li { margin-bottom: 8px; font-size: 16px; }
+  .stat-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); margin: 40px 0; border: 1px solid var(--line); }
+  @media (max-width: 720px) { .stat-bar { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell { background: white; padding: 28px 20px; text-align: center; }
+  .stat-v { font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); font-weight: 500; margin-bottom: 4px; letter-spacing: -0.02em; }
+  .stat-l { font-size: 11px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; font-weight: 500; }
+  .cta-band { background: var(--navy); color: var(--cream); padding: 72px 0; text-align: center; }
+  .cta-band h2 { color: var(--cream); font-size: 36px; margin-bottom: 18px; font-weight: 400; }
+  .cta-band h2 em { color: var(--gold); font-style: italic; }
+  .cta-band p { font-size: 18px; color: rgba(248, 245, 239, 0.82); margin-bottom: 32px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
+  .cta-band .btn-primary:hover { background: var(--gold-soft); }
+  .faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--line); }
+  .faq summary { font-family: 'Fraunces', serif; font-size: 19px; color: var(--navy); cursor: pointer; list-style: none; padding-right: 32px; position: relative; font-weight: 500; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--gold); transition: transform 0.2s; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details p { margin: 14px 0 0; color: var(--stone); font-size: 16px; line-height: 1.65; }
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; line-height: 1.8; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .product-links { background: var(--cream); padding: 56px 0; }
+  .product-links h3 { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; text-align: center; }
+  .product-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .product-chip { padding: 10px 18px; background: white; border: 1px solid var(--line); border-radius: 24px; font-size: 14px; color: var(--navy); text-decoration: none; font-weight: 500; transition: all 0.2s; }
+  .product-chip:hover { border-color: var(--gold); color: var(--gold); }
+  .product-chip.current { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="220" height="36" viewBox="0 0 220 36" xmlns="http://www.w3.org/2000/svg">
+        <text x="110" y="25" font-family="Fraunces, Georgia, serif" font-size="21" font-weight="400" fill="#0A1F3D" text-anchor="middle" letter-spacing="-0.4">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="/#products">Coverage</a>
+      <a href="/#process">How It Works</a>
+      <a href="/#about">About</a>
+      <a href="/review">Policy Review</a>
+      <a href="/quote" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/#products">Coverage</a> &middot; Whole Life</div>
+        <h1>Whole life: <em>permanent protection</em> with guaranteed cash value.</h1>
+        <p class="hero-lede">Coverage that lasts your entire life, with a fixed premium and a guaranteed growing cash value. A stable foundation for long-term planning, legacy, and wealth transfer.</p>
+        <div class="hero-cta">
+          <a href="/quote" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#learn" class="btn btn-secondary">Learn the Basics</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-eyebrow">Whole Life at a Glance</div>
+        <h3>Guaranteed coverage. Guaranteed cash value.</h3>
+        <ul>
+          <li>Permanent coverage that never expires</li>
+          <li>Fixed premium for life</li>
+          <li>Guaranteed cash value growth, tax-deferred</li>
+          <li>Potential dividends from mutual carriers</li>
+          <li>Can be borrowed against during your lifetime</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="container narrow">
+
+<section class="block" id="learn">
+  <div class="eyebrow">The Basics</div>
+  <h2>What is <em>whole life insurance</em>?</h2>
+  <p>Whole life insurance is permanent life insurance designed to stay in force for your entire lifetime. As long as premiums are paid, coverage cannot expire. It has two linked components: a death benefit payable to your beneficiaries, and a cash value that grows at a guaranteed rate on a tax-deferred basis.</p>
+  <p>Unlike term life, which is pure protection for a defined period, whole life is a lifetime contract with a savings-like vehicle embedded inside. That makes it more expensive per dollar of death benefit, but also more versatile. The cash value is an asset you can borrow against or eventually surrender.</p>
+  <p>Many whole life policies are issued by mutual insurance companies (companies owned by their policyholders). These carriers pay annual dividends to policyholders when the company performs well &mdash; dividends that can be taken as cash, used to reduce premiums, or reinvested to increase coverage.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Who It's For</div>
+  <h2>Who whole life <em>is a good fit</em> for</h2>
+  <div class="fit-box">
+    <h4>Whole life is typically a strong fit if you&hellip;</h4>
+    <ul>
+      <li>Have a lifetime protection need (special-needs dependent, business continuity, estate liquidity)</li>
+      <li>Want guaranteed, conservative growth you can predict</li>
+      <li>Have maxed out tax-advantaged retirement accounts and want additional tax-deferred savings</li>
+      <li>Value simplicity and guarantees over market upside</li>
+      <li>Plan to use the cash value for policy loans, supplemental retirement income, or legacy transfer</li>
+      <li>Want to lock in insurability permanently while you're young and healthy</li>
+    </ul>
+  </div>
+  <p>Whole life is often inappropriate for young families on a tight budget who need a large face amount &mdash; for those needs, term life usually delivers more protection per dollar. Whole life is best understood as a financial tool for specific permanent goals, not a replacement for term.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Strengths &amp; Trade-offs</div>
+  <h2>Honest pros and cons</h2>
+  <div class="two-col">
+    <div class="pro-col">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Coverage never expires (if premium paid)</li>
+        <li>Guaranteed cash value growth</li>
+        <li>Fixed, predictable premium</li>
+        <li>Tax-deferred cash value, tax-free death benefit</li>
+        <li>Can receive dividends from mutual carriers</li>
+        <li>Borrowing against cash value doesn't trigger tax</li>
+      </ul>
+    </div>
+    <div class="con-col">
+      <h4>Trade-offs</h4>
+      <ul>
+        <li>Significantly higher premium than term life</li>
+        <li>Lower returns than market investments over long periods</li>
+        <li>Cash value builds slowly in early years</li>
+        <li>Surrendering early can result in loss</li>
+        <li>Illustrated dividends are projections, not guarantees</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">How It Works</div>
+  <h2>How whole life <em>builds value</em></h2>
+  <p>Each year you pay a premium. A portion covers the insurance cost for the year (which rises with age), a portion covers administrative expenses, and the rest goes into your cash value account. The cash value earns a guaranteed interest rate set by the carrier.</p>
+  <p>In early years, most of the premium covers insurance costs, so cash value grows slowly. Over 10&ndash;20 years, compounding works in your favor &mdash; cash value growth outpaces insurance costs, and the equity in the policy accelerates.</p>
+  <p>If your carrier is a mutual insurer and declares a dividend, that dividend can be applied to increase your cash value and death benefit further. Over decades, a well-structured whole life policy from a strong mutual carrier can produce returns in the 3&ndash;5% range &mdash; modest, but tax-advantaged and guaranteed.</p>
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="stat-v">Lifetime</div><div class="stat-l">Coverage</div></div>
+    <div class="stat-cell"><div class="stat-v">Guaranteed</div><div class="stat-l">Cash Value</div></div>
+    <div class="stat-cell"><div class="stat-v">Fixed</div><div class="stat-l">Premium</div></div>
+    <div class="stat-cell"><div class="stat-v">Tax-Deferred</div><div class="stat-l">Growth</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">What Happens Next</div>
+  <h2>How I help you <em>shop whole life</em></h2>
+  <ol>
+    <li><strong>Discovery call (15 min):</strong> We talk about what you're trying to accomplish &mdash; legacy, business continuity, supplemental retirement income, cash-value use &mdash; and walk through a health questionnaire.</li>
+    <li><strong>I shop the market:</strong> Whole life carriers vary significantly in dividend history, underwriting, and policy structure. I compare several to find the right fit for your goal.</li>
+    <li><strong>Illustration review:</strong> We meet again and go through the policy illustration line by line. I explain guaranteed columns vs projected columns, so you know what's promised versus illustrated.</li>
+    <li><strong>Apply &amp; underwrite:</strong> If you're ready, we apply. Whole life typically involves full underwriting, including a medical exam for larger face amounts.</li>
+  </ol>
+  <p><a href="/quote"><strong>Request a free quote</strong></a> and I'll reach out within one business day to schedule the discovery call.</p>
+</section>
+
+<section class="block faq">
+  <div class="eyebrow">Common Questions</div>
+  <h2>Frequently asked</h2>
+  <details>
+    <summary>Is whole life "a bad investment"?</summary>
+    <p>Whole life is not a substitute for a stock portfolio, and anyone selling it as a replacement for retirement investing is either confused or dishonest. However, it's not an investment &mdash; it's insurance with a guaranteed savings feature. Compared to other guaranteed instruments (CDs, money markets), a well-structured whole life policy from a strong mutual carrier can be competitive on an after-tax basis. The question isn't "is this a good investment?" but "is this the right tool for this specific goal?"</p>
+  </details>
+  <details>
+    <summary>Should I replace my whole life with term + invest the difference?</summary>
+    <p>Sometimes yes, sometimes no. It depends on why the policy was bought, how long you've had it, the carrier, and your current goals. If you're paying premiums you can't afford and don't have a permanent protection need, a replacement conversation may be worth having &mdash; carefully, so you don't lose insurability. <a href="/review">A free policy review</a> is the right first step.</p>
+  </details>
+  <details>
+    <summary>Can I use whole life cash value as retirement income?</summary>
+    <p>Yes, but it takes planning and time. The typical strategy is to overfund a whole life policy within IRS limits (so it doesn't become a Modified Endowment Contract) for 10&ndash;20 years, then borrow against the cash value in retirement for tax-free supplemental income. This strategy only works well if the policy is properly structured from day one and if you don't need the cash value for lifetime protection.</p>
+  </details>
+  <details>
+    <summary>What about "infinite banking"?</summary>
+    <p>"Infinite banking" (or "bank on yourself") is a marketing concept built around using whole life cash value as a personal lending pool. The underlying mechanics &mdash; borrowing against cash value for various uses &mdash; are legitimate. But the concept is often oversold, and policies structured primarily for infinite banking often underperform versus straightforward financial planning. I'm happy to discuss it honestly if you're curious.</p>
+  </details>
+  <details>
+    <summary>Is whole life from a mutual carrier better than from a stock carrier?</summary>
+    <p>Generally, yes, if your goal is long-term performance. Mutual carriers are owned by policyholders and have a long history of paying dividends. Stock carriers answer to shareholders and typically don't pay dividends to policyholders. I lean mutual for whole life clients unless there's a specific reason to go a different direction.</p>
+  </details>
+</section>
+
+</div>
+</main>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Get a <em>whole life quote</em> &mdash; free, no obligation.</h2>
+    <p>I'll shop multiple A-rated mutual and stock carriers to find the right whole life policy for your goals.</p>
+    <a href="/quote" class="btn btn-primary">Request My Free Quote</a>
+  </div>
+</section>
+
+<section class="product-links">
+  <div class="container">
+    <h3>Explore Other Coverage</h3>
+    <div class="product-chips">
+      <a class="product-chip" href="/products/term-life">Term Life</a>
+      <a class="product-chip current" href="/products/whole-life">Whole Life</a>
+      <a class="product-chip" href="/products/iul">Indexed Universal Life</a>
+      <a class="product-chip" href="/products/final-expense">Final Expense</a>
+      <a class="product-chip" href="/products/mortgage-protection">Mortgage Protection</a>
+      <a class="product-chip" href="/products/annuities">Annuities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. All rights reserved.<br>
+    <a href="/">Home</a> &middot;
+    <a href="/privacy">Privacy Policy</a> &middot;
+    <a href="/consumer-health-data-privacy">Consumer Health Data Privacy</a> &middot;
+    <a href="/terms">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

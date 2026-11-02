@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annuities — Trust Life Solutions</title>
+<meta name="description" content="Fixed, indexed, and immediate annuities for retirement income and principal protection. Independent advisor with honest annuity analysis and multi-carrier comparison.">
+<link rel="icon" type="image/svg+xml" href="/brand-assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057; --gold: #C5A572; --gold-soft: #E8D9B8; --cream: #F8F5EF; --cream-warm: #EFEBE0; --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3; --green: #5C8A4C; --red: #C84B4B; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', -apple-system, sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--navy); }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; color: var(--navy); line-height: 1.1; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; }
+  nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 32px; flex-wrap: wrap; gap: 16px; }
+  .logo svg { height: 36px; width: auto; }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--charcoal); opacity: 0.75; transition: opacity 0.2s; text-decoration: none; }
+  .nav-links a:hover { opacity: 1; color: var(--navy); }
+  .nav-cta { background: var(--navy); color: var(--cream) !important; padding: 10px 22px; border-radius: 2px; opacity: 1 !important; }
+  .nav-cta:hover { background: var(--navy-light); }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+  .hero { padding: 80px 0 60px; background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: var(--cream); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(ellipse at top right, rgba(197, 165, 114, 0.12) 0%, transparent 60%); pointer-events: none; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .breadcrumb { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; font-weight: 500; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+  .breadcrumb a:hover { opacity: 1; }
+  .hero h1 { font-size: clamp(38px, 5.5vw, 56px); color: var(--cream); margin-bottom: 22px; font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-lede { font-size: 19px; color: rgba(248, 245, 239, 0.82); line-height: 1.5; margin-bottom: 32px; max-width: 600px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 28px; font-size: 15px; font-weight: 500; border-radius: 2px; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: inherit; cursor: pointer; border: none; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-soft); }
+  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(248, 245, 239, 0.35); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-card { background: rgba(248, 245, 239, 0.06); border: 1px solid rgba(197, 165, 114, 0.3); padding: 32px; border-radius: 4px; backdrop-filter: blur(8px); }
+  .hero-card-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+  .hero-card h3 { color: var(--cream); font-size: 20px; margin-bottom: 18px; font-weight: 500; line-height: 1.3; }
+  .hero-card ul { list-style: none; }
+  .hero-card li { padding: 8px 0; border-bottom: 1px solid rgba(248, 245, 239, 0.08); font-size: 14px; color: rgba(248, 245, 239, 0.85); display: flex; gap: 10px; align-items: flex-start; }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li::before { content: '●'; color: var(--gold); font-size: 8px; margin-top: 7px; }
+  main { padding: 72px 0 96px; background: white; }
+  main h2 { font-size: 34px; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.02em; font-weight: 500; }
+  main h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  main h3 { font-size: 22px; margin: 40px 0 12px; color: var(--navy); font-weight: 500; }
+  main p { margin-bottom: 20px; color: var(--charcoal); font-size: 17px; line-height: 1.7; }
+  main ul, main ol { margin: 0 0 24px 24px; }
+  main ul li, main ol li { margin-bottom: 10px; color: var(--charcoal); line-height: 1.65; }
+  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  section.block { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section.block:last-of-type { border-bottom: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 32px 0; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 24px; } }
+  .pro-col, .con-col { padding: 28px; border-radius: 4px; }
+  .pro-col { background: rgba(92, 138, 76, 0.06); border-left: 3px solid var(--green); }
+  .con-col { background: rgba(200, 75, 75, 0.04); border-left: 3px solid var(--red); }
+  .pro-col h4, .con-col h4 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; }
+  .pro-col h4 { color: var(--green); }
+  .con-col h4 { color: var(--red); }
+  .pro-col ul, .con-col ul { margin: 0 0 0 20px; }
+  .pro-col li, .con-col li { margin-bottom: 8px; font-size: 15px; }
+  .fit-box { background: var(--cream); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 32px 0; border-radius: 2px; }
+  .fit-box h4 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
+  .fit-box ul { margin: 0 0 0 20px; }
+  .fit-box li { margin-bottom: 8px; font-size: 16px; }
+  .stat-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); margin: 40px 0; border: 1px solid var(--line); }
+  @media (max-width: 720px) { .stat-bar { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell { background: white; padding: 28px 20px; text-align: center; }
+  .stat-v { font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); font-weight: 500; margin-bottom: 4px; letter-spacing: -0.02em; }
+  .stat-l { font-size: 11px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; font-weight: 500; }
+  .cta-band { background: var(--navy); color: var(--cream); padding: 72px 0; text-align: center; }
+  .cta-band h2 { color: var(--cream); font-size: 36px; margin-bottom: 18px; font-weight: 400; }
+  .cta-band h2 em { color: var(--gold); font-style: italic; }
+  .cta-band p { font-size: 18px; color: rgba(248, 245, 239, 0.82); margin-bottom: 32px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
+  .cta-band .btn-primary:hover { background: var(--gold-soft); }
+  .faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--line); }
+  .faq summary { font-family: 'Fraunces', serif; font-size: 19px; color: var(--navy); cursor: pointer; list-style: none; padding-right: 32px; position: relative; font-weight: 500; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--gold); transition: transform 0.2s; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details p { margin: 14px 0 0; color: var(--stone); font-size: 16px; line-height: 1.65; }
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; line-height: 1.8; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .product-links { background: var(--cream); padding: 56px 0; }
+  .product-links h3 { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; text-align: center; }
+  .product-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .product-chip { padding: 10px 18px; background: white; border: 1px solid var(--line); border-radius: 24px; font-size: 14px; color: var(--navy); text-decoration: none; font-weight: 500; transition: all 0.2s; }
+  .product-chip:hover { border-color: var(--gold); color: var(--gold); }
+  .product-chip.current { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="220" height="36" viewBox="0 0 220 36" xmlns="http://www.w3.org/2000/svg">
+        <text x="110" y="25" font-family="Fraunces, Georgia, serif" font-size="21" font-weight="400" fill="#0A1F3D" text-anchor="middle" letter-spacing="-0.4">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="/#products">Coverage</a>
+      <a href="/#process">How It Works</a>
+      <a href="/#about">About</a>
+      <a href="/review">Policy Review</a>
+      <a href="/quote" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/#products">Coverage</a> &middot; Annuities</div>
+        <h1>Annuities: <em>guaranteed retirement income</em>, on your terms.</h1>
+        <p class="hero-lede">Fixed, indexed, and immediate annuities for retirement income planning, principal protection, and legacy transfer. Straightforward analysis &mdash; not sales pressure.</p>
+        <div class="hero-cta">
+          <a href="/quote" class="btn btn-primary">Get a Free Analysis</a>
+          <a href="#learn" class="btn btn-secondary">Learn the Basics</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-eyebrow">Annuities at a Glance</div>
+        <h3>Insurance contracts for retirement income.</h3>
+        <ul>
+          <li>Tax-deferred growth of principal</li>
+          <li>Optional lifetime guaranteed income</li>
+          <li>Principal protection (fixed and indexed)</li>
+          <li>No contribution limits (unlike IRAs/401(k)s)</li>
+          <li>Can include death benefits for heirs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="container narrow">
+
+<section class="block" id="learn">
+  <div class="eyebrow">The Basics</div>
+  <h2>What is <em>an annuity</em>?</h2>
+  <p>An annuity is a contract between you and an insurance carrier. You deposit money (either in a lump sum or over time), and the carrier promises either (1) a future stream of income, (2) a lump-sum payout with guaranteed growth, or (3) a combination of both. Annuities are generally used for retirement income planning and for protecting retirement principal.</p>
+  <p>The key appeal is <strong>guarantees</strong>. Unlike market investments, a properly structured annuity can guarantee income you can't outlive, guarantee your principal won't lose value, or both. The trade-off is typically lower upside potential than the market &mdash; you're paying for certainty.</p>
+  <p>Annuities come in several flavors: fixed (guaranteed interest rate), indexed (linked to market index with floor), variable (invested in sub-accounts, riskier), and immediate (you pay a lump sum and income starts right away). Each fits different goals.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Who It's For</div>
+  <h2>Who annuities <em>are a good fit</em> for</h2>
+  <div class="fit-box">
+    <h4>Annuities are typically a strong fit if you&hellip;</h4>
+    <ul>
+      <li>Are within 10 years of retirement or already retired</li>
+      <li>Want guaranteed income you can't outlive</li>
+      <li>Have maxed out tax-advantaged retirement accounts and want additional tax-deferred growth</li>
+      <li>Are worried about sequence-of-returns risk in early retirement</li>
+      <li>Want a principal-protected component in your retirement portfolio</li>
+      <li>Have a pension-like goal but no employer pension</li>
+      <li>Want to leave a specific legacy amount regardless of market conditions</li>
+    </ul>
+  </div>
+  <p>Annuities are <em>not</em> typically a fit for younger investors who should be focused on accumulation in tax-advantaged accounts first, or for anyone who doesn't understand the surrender charge schedule and contract mechanics. Annuities are long-term commitments.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Types of Annuities</div>
+  <h2>The main <em>types</em> of annuity</h2>
+
+  <h3>Fixed Annuity</h3>
+  <p>A guaranteed interest rate for a specified period (often 3, 5, or 7 years). Similar to a bank CD but with tax-deferred growth and typically higher rates. Good for conservative savers seeking predictability.</p>
+
+  <h3>Fixed Indexed Annuity (FIA)</h3>
+  <p>Principal is protected (0% floor), and growth is linked to a market index subject to caps or participation rates. Offers upside potential without downside risk. Popular for pre-retirees wanting market-linked growth with guaranteed principal.</p>
+
+  <h3>Immediate Annuity (SPIA)</h3>
+  <p>A lump-sum payment in exchange for an immediate, guaranteed stream of income &mdash; often for life. The simplest form of "creating your own pension." Popular at retirement for covering essential fixed expenses.</p>
+
+  <h3>Variable Annuity</h3>
+  <p>Principal is invested in subaccounts (similar to mutual funds). Potential for higher returns but also potential for loss. More complex, typically higher fees. We generally don't recommend variable annuities unless there's a specific structural reason &mdash; for most people, the cost outweighs the benefit.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Strengths &amp; Trade-offs</div>
+  <h2>Honest pros and cons</h2>
+  <div class="two-col">
+    <div class="pro-col">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Guaranteed income options you can't outlive</li>
+        <li>Tax-deferred growth</li>
+        <li>Principal protection (fixed &amp; indexed)</li>
+        <li>No contribution limits</li>
+        <li>Death benefits can be structured for heirs</li>
+        <li>Great for creating a personal pension</li>
+      </ul>
+    </div>
+    <div class="con-col">
+      <h4>Trade-offs</h4>
+      <ul>
+        <li>Surrender charges in early years (5&ndash;10 years typical)</li>
+        <li>Generally lower growth potential than direct market investing</li>
+        <li>Complexity varies significantly by product</li>
+        <li>Lifetime income riders have costs</li>
+        <li>Long-term commitment &mdash; not a short-term vehicle</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Common Misconceptions</div>
+  <h2>What you might have <em>heard</em> about annuities</h2>
+  <p>Annuities are probably the most criticized &mdash; and most misunderstood &mdash; product in personal finance. Some criticisms are valid for <em>some</em> annuity types; some are overstated.</p>
+  <ul>
+    <li><strong>"Annuities have high fees."</strong> Variable annuities often do. Fixed and fixed-indexed annuities typically have no explicit fees &mdash; the carrier's "cost" is built into the cap/participation rate or the fixed interest rate. Always ask: "What specifically is the cost structure?"</li>
+    <li><strong>"I can do better in the market."</strong> Probably true on average, over long time horizons. But the appeal of annuities isn't outperforming the market &mdash; it's guaranteeing income or principal regardless of what the market does. Apples to oranges.</li>
+    <li><strong>"Annuities are hard to get out of."</strong> They have surrender charges, usually on a declining schedule. Most contracts allow 10% annual free withdrawals. This is why annuities are only appropriate for money you don't need in the near term.</li>
+    <li><strong>"Agents get huge commissions."</strong> Commissions on annuities vary widely. Part of my job is showing you products where the cost structure makes sense for you &mdash; regardless of commission.</li>
+  </ul>
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="stat-v">Lifetime</div><div class="stat-l">Income Option</div></div>
+    <div class="stat-cell"><div class="stat-v">Tax-Deferred</div><div class="stat-l">Growth</div></div>
+    <div class="stat-cell"><div class="stat-v">0%</div><div class="stat-l">Floor (Fixed/FIA)</div></div>
+    <div class="stat-cell"><div class="stat-v">Unlimited</div><div class="stat-l">Contributions</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">What Happens Next</div>
+  <h2>How I help you <em>evaluate an annuity</em></h2>
+  <ol>
+    <li><strong>Discovery call (15&ndash;30 min):</strong> We talk through your retirement picture &mdash; Social Security, pensions if any, existing savings, and what income gap you're trying to fill.</li>
+    <li><strong>Goal clarification:</strong> Are we accumulating, creating lifetime income, protecting principal, or leaving a legacy? Different goals point to different annuity types.</li>
+    <li><strong>Carrier &amp; product comparison:</strong> I shop multiple A-rated carriers and walk you through the specific contract features, surrender schedules, caps, and riders.</li>
+    <li><strong>Honest assessment:</strong> If an annuity doesn't make sense for your situation, I'll tell you. Not every client needs one.</li>
+    <li><strong>Apply &amp; issue:</strong> Annuity applications typically don't require medical underwriting. Funding and issuance usually takes a few weeks.</li>
+  </ol>
+  <p><strong>Note:</strong> Advanced retirement income and annuity strategies often involve a specialist partner network in addition to my direct work with you. I'll disclose any partner relationships transparently.</p>
+  <p><a href="/quote"><strong>Request a free conversation</strong></a> and I'll reach out within one business day.</p>
+</section>
+
+<section class="block faq">
+  <div class="eyebrow">Common Questions</div>
+  <h2>Frequently asked</h2>
+  <details>
+    <summary>Are annuities safe?</summary>
+    <p>Fixed and fixed-indexed annuities from A-rated carriers are considered safe in the sense that principal is protected by the carrier's guarantees. State guaranty associations provide additional protection up to limits that vary by state. Variable annuities carry market risk. As with any insurance product, the financial strength of the carrier matters.</p>
+  </details>
+  <details>
+    <summary>How is an annuity different from a 401(k) or IRA?</summary>
+    <p>A 401(k) or IRA is an <em>account type</em> with tax advantages &mdash; you choose investments inside it. An annuity is a <em>contract</em> with an insurance carrier that provides specific guarantees. You can actually hold an annuity inside an IRA (a "qualified annuity") to combine tax treatment with annuity guarantees.</p>
+  </details>
+  <details>
+    <summary>What is a lifetime income rider?</summary>
+    <p>A lifetime income rider is an add-on to certain annuity contracts that guarantees a minimum stream of income for your lifetime, regardless of what the underlying account value does. It has a cost (usually 0.95%&ndash;1.25% annually). For retirees who want pension-like income guarantees, it can be valuable. For accumulation-focused clients, often unnecessary.</p>
+  </details>
+  <details>
+    <summary>Can I access my money in an annuity?</summary>
+    <p>Generally, yes &mdash; but with restrictions. Most annuities allow 10% annual free withdrawals. Withdrawals above that during the surrender charge period incur a penalty that declines over several years. There are also IRS tax implications (earnings withdrawn before 59½ may face a 10% federal penalty in addition to income tax). Annuities are long-term vehicles &mdash; they're not suited for money you may need soon.</p>
+  </details>
+  <details>
+    <summary>What happens to the annuity when I die?</summary>
+    <p>Depends on contract type and how you structured it. Many annuities include a death benefit that passes the account value (or a guaranteed minimum) to your beneficiary. Immediate annuities with life-only payouts stop at death &mdash; but joint-life and period-certain options ensure continued payments to a surviving spouse or heirs. Beneficiary and payout structure matters a lot; we design it explicitly.</p>
+  </details>
+</section>
+
+</div>
+</main>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Get an <em>honest annuity conversation</em> &mdash; free, no obligation.</h2>
+    <p>I'll walk you through the product types, run the numbers, and tell you honestly whether an annuity fits.</p>
+    <a href="/quote" class="btn btn-primary">Request a Conversation</a>
+  </div>
+</section>
+
+<section class="product-links">
+  <div class="container">
+    <h3>Explore Other Coverage</h3>
+    <div class="product-chips">
+      <a class="product-chip" href="/products/term-life">Term Life</a>
+      <a class="product-chip" href="/products/whole-life">Whole Life</a>
+      <a class="product-chip" href="/products/iul">Indexed Universal Life</a>
+      <a class="product-chip" href="/products/final-expense">Final Expense</a>
+      <a class="product-chip" href="/products/mortgage-protection">Mortgage Protection</a>
+      <a class="product-chip current" href="/products/annuities">Annuities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. All rights reserved.<br>
+    <a href="/">Home</a> &middot;
+    <a href="/privacy">Privacy Policy</a> &middot;
+    <a href="/consumer-health-data-privacy">Consumer Health Data Privacy</a> &middot;
+    <a href="/terms">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
