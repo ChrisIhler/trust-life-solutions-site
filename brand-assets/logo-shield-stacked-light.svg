@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 150" width="160" height="150">
+  <path d="M60 16 L100 16 L100 54 C100 74 80 86 80 86 C80 86 60 74 60 54 Z" fill="#0A1F3D" stroke="#C5A572" stroke-width="1.5"/>
+  <text x="80" y="56" font-family="Fraunces, Georgia, serif" font-size="26" font-weight="600" fill="#C5A572" text-anchor="middle">T</text>
+  <text x="80" y="116" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#0A1F3D" letter-spacing="-0.3" text-anchor="middle">Trust Life</text>
+  <text x="80" y="134" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#0A1F3D" letter-spacing="-0.3" text-anchor="middle">Solutions</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" width="340" height="90">
+  <text x="170" y="44" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="400" fill="#F8F5EF" text-anchor="middle" letter-spacing="-0.5">
+    <tspan font-style="italic" fill="#C5A572">Trust</tspan> Life Solutions
+  </text>
+  <line x1="75" y1="58" x2="140" y2="58" stroke="#C5A572" stroke-width="0.75"/>
+  <text x="170" y="72" font-family="Instrument Sans, Helvetica, sans-serif" font-size="9" font-weight="500" fill="#C5A572" text-anchor="middle" letter-spacing="3.15">LICENSED · INDEPENDENT · ADVISORY</text>
+  <line x1="200" y1="58" x2="265" y2="58" stroke="#C5A572" stroke-width="0.75"/>
+</svg>
