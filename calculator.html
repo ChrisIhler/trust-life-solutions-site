@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How much life insurance do I need? Free calculator from Trust Life Solutions — DIME method with full financial analysis.">
+<title>How Much Life Insurance Do I Need? — Free Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057;
+    --gold: #C5A572; --gold-bright: #D4B886; --gold-soft: #E8D9B8;
+    --cream: #F8F5EF; --cream-warm: #EFEBE0;
+    --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.55; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+
+  nav { background: white; border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 20px 32px; }
+  .nav-phone { font-family: 'Fraunces', serif; font-size: 18px; color: var(--navy); text-decoration: none; }
+  .nav-phone span { color: var(--gold); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; display: block; font-family: 'Instrument Sans', sans-serif; }
+
+  .hero-header {
+    padding: 60px 0 40px;
+    background: radial-gradient(ellipse at top, rgba(197, 165, 114, 0.08), transparent), var(--cream);
+    border-bottom: 1px solid var(--line);
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(36px, 5vw, 54px); letter-spacing: -0.03em; line-height: 1.05; color: var(--navy); margin-bottom: 16px; }
+  h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .hero-lede { font-size: 18px; color: var(--stone); max-width: 640px; line-height: 1.55; }
+
+  .calc-section { padding: 60px 0 100px; }
+  .calc-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr; } }
+
+  /* FORM */
+  .form-card { background: white; padding: 40px; border-radius: 4px; border: 1px solid var(--line); box-shadow: 0 2px 30px rgba(10, 31, 61, 0.04); }
+  @media (max-width: 500px) { .form-card { padding: 28px 24px; } }
+  .form-group { margin-bottom: 36px; }
+  .form-group:last-of-type { margin-bottom: 0; }
+  .form-group-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 6px; letter-spacing: -0.01em; }
+  .form-group-desc { font-size: 13px; color: var(--stone); margin-bottom: 20px; }
+  .field { margin-bottom: 18px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+  label .hint { text-transform: none; letter-spacing: normal; color: var(--stone); font-size: 11px; font-weight: 400; margin-left: 8px; }
+  .input-wrap { position: relative; }
+  .input-prefix { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--stone); font-weight: 500; }
+  input[type="number"], input[type="text"], select {
+    width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 2px;
+    font-family: inherit; font-size: 15px; color: var(--charcoal); background: var(--cream);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  input[type="number"].with-prefix { padding-left: 28px; }
+  input:focus, select:focus { outline: none; border-color: var(--gold); background: white; }
+
+  .slider-wrap { margin-top: 12px; }
+  .slider-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--stone); margin-top: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none; width: 100%; height: 6px;
+    background: var(--line); border-radius: 3px; outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 22px; height: 22px;
+    background: var(--gold); border-radius: 50%; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(197, 165, 114, 0.4);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 22px; height: 22px; background: var(--gold); border-radius: 50%;
+    cursor: pointer; border: none;
+  }
+  .slider-val {
+    font-family: 'Fraunces', serif; font-size: 22px; color: var(--navy);
+    font-weight: 500; margin-top: 4px;
+  }
+
+  /* RESULT CARD */
+  .result-card {
+    background: var(--navy); color: var(--cream); padding: 40px;
+    border-radius: 4px; position: sticky; top: 32px;
+    box-shadow: 0 4px 40px rgba(10, 31, 61, 0.2);
+  }
+  .result-card::before {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle at top right, var(--gold) 0%, transparent 70%);
+    opacity: 0.15;
+  }
+  .result-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; position: relative; font-weight: 600; }
+  .result-number { font-family: 'Fraunces', serif; font-size: clamp(44px, 6vw, 64px); color: var(--gold); font-weight: 300; line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; position: relative; }
+  .result-sub { color: #A0A9BB; font-size: 13px; margin-bottom: 28px; position: relative; }
+
+  .result-breakdown { border-top: 1px solid rgba(197, 165, 114, 0.2); padding-top: 20px; position: relative; }
+  .breakdown-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 600; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: #C8CCD6; border-bottom: 1px solid rgba(197, 165, 114, 0.1); }
+  .breakdown-row.total { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(197, 165, 114, 0.3); border-bottom: none; color: var(--cream); font-weight: 500; font-size: 15px; }
+  .breakdown-row.subtract { color: #C8CCD6; }
+  .breakdown-row.subtract span:last-child { color: #D4A47A; }
+  .breakdown-row.total span:last-child { color: var(--gold); font-family: 'Fraunces', serif; font-size: 18px; }
+
+  .result-cta {
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid rgba(197, 165, 114, 0.2);
+    position: relative;
+  }
+  .result-cta p { color: #C8CCD6; margin-bottom: 16px; font-size: 14px; line-height: 1.55; }
+  .cta-btn {
+    display: block; width: 100%; padding: 16px; text-align: center;
+    background: var(--gold); color: var(--navy); border-radius: 2px;
+    font-weight: 600; font-size: 14px; letter-spacing: 0.05em;
+    text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+  }
+  .cta-btn:hover { background: var(--gold-bright); }
+  .cta-phone {
+    display: block; margin-top: 12px; text-align: center;
+    color: var(--cream); text-decoration: none;
+    font-family: 'Fraunces', serif; font-size: 18px;
+  }
+  .cta-phone span { color: var(--gold); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; display: block; font-family: 'Instrument Sans', sans-serif; margin-bottom: 2px; }
+
+  /* EXPLAINER */
+  .explainer {
+    background: var(--cream-warm);
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+  }
+  .explainer-inner { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+  .explainer h2 { font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 400; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; }
+  .explainer h2 em { font-style: italic; color: var(--gold); }
+  .explainer h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--navy); margin-top: 32px; margin-bottom: 12px; }
+  .explainer p { color: var(--charcoal); margin-bottom: 16px; line-height: 1.65; }
+  .dime-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+  @media (max-width: 600px) { .dime-grid { grid-template-columns: 1fr; } }
+  .dime-card { background: white; padding: 24px; border-radius: 3px; border-left: 3px solid var(--gold); }
+  .dime-letter { font-family: 'Fraunces', serif; font-size: 32px; color: var(--gold); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .dime-card h4 { font-family: 'Fraunces', serif; font-size: 16px; color: var(--navy); margin-bottom: 6px; font-weight: 500; }
+  .dime-card p { font-size: 14px; color: var(--stone); line-height: 1.55; margin-bottom: 0; }
+
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  .disclaimer { font-size: 11px; color: var(--stone); margin-top: 16px; line-height: 1.55; font-style: italic; }
+</style>
+<link rel="icon" type="image/svg+xml" href="brand-assets/favicon.svg">
+<link rel="apple-touch-icon" href="brand-assets/favicon.svg">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="text-decoration:none;">
+      <svg width="240" height="38" viewBox="0 0 240 38" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L28 4 L28 22 C28 30 16 34 16 34 C16 34 4 30 4 22 Z" fill="#0A1F3D" stroke="#C5A572" stroke-width="1.3"/>
+        <text x="16" y="22" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600" fill="#C5A572" text-anchor="middle">T</text>
+        <text x="40" y="25" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#0A1F3D" letter-spacing="-0.3">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <a href="tel:+14255679668" class="nav-phone">
+      <span>Call or Text</span>
+      (425) 567-9668
+    </a>
+  </div>
+</nav>
+
+<section class="hero-header">
+  <div class="container">
+    <div class="eyebrow">Free Needs Calculator</div>
+    <h1>How much life insurance <em>do I actually need?</em></h1>
+    <p class="hero-lede">Stop guessing with "10x income" rules of thumb. This calculator uses the DIME method (Debt + Income + Mortgage + Education) adjusted for your assets and existing coverage — the same approach financial advisors use.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-grid">
+
+      <div class="form-card">
+
+        <div class="form-group">
+          <div class="form-group-title">About You</div>
+          <div class="form-group-desc">Basic context for the calculation.</div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="age">Your Age</label>
+              <input type="number" id="age" value="40" min="18" max="80">
+            </div>
+            <div class="field">
+              <label for="years">Years of Income to Replace <span class="hint">Until kids are grown / retirement</span></label>
+              <input type="number" id="years" value="15" min="1" max="40">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Income to Replace (I)</div>
+          <div class="form-group-desc">Your annual income that your family depends on.</div>
+
+          <div class="field">
+            <label for="income">Annual Income</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="income" class="with-prefix" value="85000" min="0" step="1000">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Mortgage (M)</div>
+          <div class="form-group-desc">The balance remaining on your home loan.</div>
+
+          <div class="field">
+            <label for="mortgage">Mortgage Balance</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="mortgage" class="with-prefix" value="350000" min="0" step="1000">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Other Debt (D)</div>
+          <div class="form-group-desc">Credit cards, student loans, auto loans, medical debt — anything except the mortgage.</div>
+
+          <div class="field">
+            <label for="debt">Total Other Debt</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="debt" class="with-prefix" value="25000" min="0" step="1000">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Education (E)</div>
+          <div class="form-group-desc">Current public in-state runs ~$100k/child for 4 years; private runs $200k+.</div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="kids">Number of Kids to Fund</label>
+              <input type="number" id="kids" value="2" min="0" max="10">
+            </div>
+            <div class="field">
+              <label for="perkid">Funding Goal per Child</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input type="number" id="perkid" class="with-prefix" value="100000" min="0" step="5000">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Final Expenses</div>
+          <div class="form-group-desc">Funeral, burial, estate settlement. Typical: $15,000–$25,000.</div>
+
+          <div class="field">
+            <label for="final">Final Expenses</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="final" class="with-prefix" value="20000" min="0" step="1000">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Offsets</div>
+          <div class="form-group-desc">Existing assets and coverage reduce the amount of new insurance you need.</div>
+
+          <div class="field">
+            <label for="existing">Existing Life Insurance (Personal + Through Work)</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="existing" class="with-prefix" value="150000" min="0" step="1000">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="savings">Savings &amp; Investments Available to Family</label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="savings" class="with-prefix" value="75000" min="0" step="1000">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="result-card">
+        <div class="result-label">Estimated Coverage Need</div>
+        <div class="result-number" id="total">$1,595,000</div>
+        <div class="result-sub" id="totalSub">Term life insurance recommended</div>
+
+        <div class="result-breakdown">
+          <div class="breakdown-title">Your Breakdown</div>
+          <div class="breakdown-row"><span>Income Replacement</span><span id="b-income">$1,275,000</span></div>
+          <div class="breakdown-row"><span>Mortgage</span><span id="b-mortgage">$350,000</span></div>
+          <div class="breakdown-row"><span>Other Debt</span><span id="b-debt">$25,000</span></div>
+          <div class="breakdown-row"><span>Kids' Education</span><span id="b-education">$200,000</span></div>
+          <div class="breakdown-row"><span>Final Expenses</span><span id="b-final">$20,000</span></div>
+          <div class="breakdown-row subtract"><span>− Existing Coverage</span><span id="b-existing">−$150,000</span></div>
+          <div class="breakdown-row subtract"><span>− Savings &amp; Investments</span><span id="b-savings">−$75,000</span></div>
+          <div class="breakdown-row total"><span>Total Need</span><span id="b-total">$1,645,000</span></div>
+        </div>
+
+        <div class="result-cta">
+          <p>This is an estimate. Your actual need depends on your family structure, tax situation, and long-term goals. Let's talk through what fits.</p>
+          <a href="/quote" class="cta-btn">Request a Free Consultation →</a>
+          <a href="tel:+14255679668" class="cta-phone">
+            <span>Or Call Direct</span>
+            (425) 567-9668
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer" style="max-width: 820px; margin: 40px auto 0;">
+      This calculator provides an estimate for educational purposes only. It is not a guarantee of insurance coverage, premium rates, or approval. Actual insurance needs depend on many factors including tax situation, beneficiary goals, existing retirement accounts, Social Security survivor benefits, and the long-term inflation-adjusted cost of living. For a personalized analysis, schedule a free consultation with Chris Ihler, Licensed Insurance Advisor.
+    </div>
+  </div>
+</section>
+
+<section class="explainer">
+  <div class="explainer-inner">
+    <div class="eyebrow">How the Math Works</div>
+    <h2>The <em>DIME method</em> — explained simply.</h2>
+    <p>DIME is the standard starting point financial advisors use to estimate life insurance need. It covers four categories of financial responsibility your income currently supports. Your family would need to replace those without you.</p>
+
+    <div class="dime-grid">
+      <div class="dime-card">
+        <div class="dime-letter">D</div>
+        <h4>Debt</h4>
+        <p>Everything you owe except the mortgage — credit cards, student loans, auto loans, medical debt. Your family shouldn't inherit these.</p>
+      </div>
+      <div class="dime-card">
+        <div class="dime-letter">I</div>
+        <h4>Income</h4>
+        <p>Annual salary × years of support. Typically until the kids are out of the house, or until retirement savings would take over.</p>
+      </div>
+      <div class="dime-card">
+        <div class="dime-letter">M</div>
+        <h4>Mortgage</h4>
+        <p>Your current mortgage balance. Sized to this, your family keeps the home free and clear.</p>
+      </div>
+      <div class="dime-card">
+        <div class="dime-letter">E</div>
+        <h4>Education</h4>
+        <p>College costs for each child you want to fund. Typical public in-state: ~$100k per child. Private: $200k+.</p>
+      </div>
+    </div>
+
+    <h3>Why we adjust for assets and existing coverage</h3>
+    <p>Raw DIME tends to overstate the need. If you already have a $500k term policy through work and $200k in a brokerage account your spouse could access, that's $700k less in new insurance you need to buy. This calculator subtracts those to give you a realistic number.</p>
+
+    <h3>What this doesn't include</h3>
+    <p>This calculator doesn't adjust for Social Security survivor benefits (modest but real), inflation over a 20-year term, or the cost of hiring help to replace what a stay-at-home parent does. For a full picture, book a free consultation and we'll build a complete plan together.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. &middot; <a href="/">Home</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a>
+    <p style="margin-top: 12px; font-size: 11px; color: #6C7487;">
+      Chris Ihler, Licensed Insurance Advisor · NPN 21599086 · Licensed in WA, OR, CA, NV, ID, MI, OH, VA, SC
+    </p>
+  </div>
+</footer>
+
+<script>
+  function formatMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+  function formatMoneyNeg(n) {
+    return '−$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function calculate() {
+    const income = +document.getElementById('income').value || 0;
+    const years = +document.getElementById('years').value || 0;
+    const mortgage = +document.getElementById('mortgage').value || 0;
+    const debt = +document.getElementById('debt').value || 0;
+    const kids = +document.getElementById('kids').value || 0;
+    const perkid = +document.getElementById('perkid').value || 0;
+    const final = +document.getElementById('final').value || 0;
+    const existing = +document.getElementById('existing').value || 0;
+    const savings = +document.getElementById('savings').value || 0;
+
+    const incomeReplacement = income * years;
+    const education = kids * perkid;
+    const obligations = incomeReplacement + mortgage + debt + education + final;
+    const offsets = existing + savings;
+    const total = Math.max(0, obligations - offsets);
+
+    document.getElementById('b-income').textContent = formatMoney(incomeReplacement);
+    document.getElementById('b-mortgage').textContent = formatMoney(mortgage);
+    document.getElementById('b-debt').textContent = formatMoney(debt);
+    document.getElementById('b-education').textContent = formatMoney(education);
+    document.getElementById('b-final').textContent = formatMoney(final);
+    document.getElementById('b-existing').textContent = formatMoneyNeg(existing);
+    document.getElementById('b-savings').textContent = formatMoneyNeg(savings);
+    document.getElementById('b-total').textContent = formatMoney(total);
+
+    // Round the display to nearest $25,000 for cleanliness
+    const displayTotal = Math.ceil(total / 25000) * 25000;
+    document.getElementById('total').textContent = formatMoney(displayTotal);
+
+    // Subtitle based on amount
+    const sub = document.getElementById('totalSub');
+    if (total < 250000) {
+      sub.textContent = 'Final expense or small term policy typically fits';
+    } else if (total < 1000000) {
+      sub.textContent = '20-year term life insurance recommended';
+    } else if (total < 2500000) {
+      sub.textContent = '20-year or 30-year term life recommended';
+    } else {
+      sub.textContent = 'Multi-policy or permanent coverage may fit best';
+    }
+  }
+
+  // Attach to all inputs
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', calculate);
+  });
+
+  calculate();
+</script>
+
+</body>
+</html>

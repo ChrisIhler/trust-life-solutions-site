@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you-quote.html
+Disallow: /thank-you-review.html
+Disallow: /health-intake.html
+Disallow: /kpi-tracker.html
+Disallow: /objection-flashcards.html
+
+Sitemap: https://trustlifesolutions.com/sitemap.xml

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free life insurance policy review. Make sure your coverage still fits. 20+ A-rated carriers compared.">
+<title>Free Policy Review — Trust Life Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057;
+    --gold: #C5A572; --gold-bright: #D4B886; --gold-soft: #E8D9B8; --gold-dark: #8B6F3F;
+    --cream: #F8F5EF; --cream-warm: #EFEBE0;
+    --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .header-bar { background: var(--navy-deep); color: var(--cream); padding: 16px 0; font-size: 14px; text-align: center; }
+  .header-bar strong { color: var(--gold); }
+  nav { background: white; border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 20px 32px; }
+  .logo svg { height: 38px; }
+  .nav-phone { font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy); text-decoration: none; }
+  .nav-phone span { color: var(--gold); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; display: block; font-family: 'Instrument Sans', sans-serif; }
+
+  .hero {
+    padding: 60px 0 100px;
+    background:
+      radial-gradient(ellipse at top right, rgba(197, 165, 114, 0.1) 0%, transparent 60%),
+      var(--cream);
+  }
+  .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold-dark); }
+
+  h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5.5vw, 68px); letter-spacing: -0.035em; line-height: 1.05; color: var(--navy); margin-bottom: 28px; }
+  h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+  .lede { font-size: 19px; color: var(--stone); margin-bottom: 40px; max-width: 520px; line-height: 1.55; }
+
+  /* Problem list */
+  .problem-list { margin-top: 40px; background: white; border: 1px solid var(--line); border-radius: 4px; padding: 32px; }
+  .problem-list-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; color: var(--navy); margin-bottom: 20px; }
+  .problem-list ul { list-style: none; padding: 0; }
+  .problem-list li { padding: 12px 0; display: flex; align-items: flex-start; gap: 14px; font-size: 15px; border-bottom: 1px solid var(--line); }
+  .problem-list li:last-child { border-bottom: none; }
+  .problem-list svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+  /* FORM */
+  form.lead-form {
+    background: white; padding: 48px; border-radius: 4px; border: 1px solid var(--line);
+    box-shadow: 0 4px 40px rgba(10, 31, 61, 0.08); position: sticky; top: 32px;
+  }
+  @media (max-width: 500px) { form.lead-form { padding: 32px 24px; } }
+  .form-badge {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--gold-soft); color: var(--navy);
+    padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .form-badge::before { content: '●'; color: #2D8659; font-size: 10px; }
+  .form-title { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 500; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; line-height: 1.15; }
+  .form-subtitle { font-size: 14px; color: var(--stone); margin-bottom: 32px; line-height: 1.5; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 2px;
+    font-family: inherit; font-size: 15px; color: var(--charcoal); background: var(--cream);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .field textarea { min-height: 80px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); background: white; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .consent-block {
+    background: var(--cream); padding: 18px; border-radius: 2px; margin: 20px 0;
+    font-size: 12px; line-height: 1.55; color: var(--stone);
+  }
+  .consent-block label {
+    display: flex !important; align-items: flex-start !important; gap: 10px; cursor: pointer;
+    text-transform: none !important; letter-spacing: normal !important;
+    font-size: 12px !important; font-weight: 400 !important; color: var(--charcoal) !important; margin-bottom: 10px !important;
+  }
+  .consent-block label:last-child { margin-bottom: 0 !important; }
+  .consent-block input[type="checkbox"] { width: auto; margin-top: 3px; flex-shrink: 0; accent-color: var(--gold); }
+  .consent-block a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); }
+  button[type="submit"] {
+    width: 100%; padding: 18px; background: var(--navy); color: var(--cream); border: none;
+    font-family: inherit; font-size: 15px; font-weight: 500; letter-spacing: 0.04em;
+    cursor: pointer; border-radius: 2px; transition: background 0.2s;
+  }
+  button[type="submit"]:hover { background: var(--navy-light); }
+  .form-footer { margin-top: 16px; text-align: center; font-size: 11px; color: var(--stone); line-height: 1.5; }
+
+  /* What we look at */
+  .reviews-section { padding: 100px 0; background: white; }
+  .reviews-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .reviews-header { text-align: center; max-width: 700px; margin: 0 auto 64px; }
+  .reviews-header h2 { font-family: 'Fraunces', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 400; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
+  .reviews-header h2 em { font-style: italic; color: var(--gold); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+  .review-card { padding: 32px; border: 1px solid var(--line); border-radius: 4px; background: var(--cream); }
+  .review-card h3 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--navy); margin-bottom: 12px; font-weight: 500; }
+  .review-card p { color: var(--stone); font-size: 15px; line-height: 1.6; }
+
+  /* Scenarios */
+  .scenarios { padding: 100px 0; background: var(--navy); color: var(--cream); }
+  .scenarios-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .scenarios h2 { font-family: 'Fraunces', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 300; color: var(--cream); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; text-align: center; }
+  .scenarios h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .scenarios p.sub { text-align: center; color: #B8C0D1; margin-bottom: 56px; font-size: 17px; }
+  .scenario-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 700px) { .scenario-grid { grid-template-columns: 1fr; } }
+  .scenario {
+    padding: 28px;
+    background: rgba(197, 165, 114, 0.08);
+    border-left: 2px solid var(--gold);
+    border-radius: 2px;
+  }
+  .scenario strong { color: var(--gold); display: block; margin-bottom: 8px; font-size: 15px; letter-spacing: 0.04em; }
+  .scenario p { color: #C8CCD6; font-size: 15px; line-height: 1.55; }
+
+  /* FOOTER */
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 64px 0 32px; font-size: 13px; }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .footer-compliance { border-top: 1px solid rgba(197, 165, 114, 0.15); padding-top: 32px; margin-top: 32px; font-size: 11px; line-height: 1.7; color: #6C7487; }
+  .footer-compliance p { margin-bottom: 12px; }
+  .footer-links { margin-top: 20px; }
+  .footer-links a { color: var(--gold); text-decoration: none; margin-right: 16px; }
+</style>
+<link rel="icon" type="image/svg+xml" href="brand-assets/favicon.svg">
+<link rel="apple-touch-icon" href="brand-assets/favicon.svg">
+</head>
+<body>
+
+<div class="header-bar">
+  <strong>Free Policy Review &middot; Independent Analysis &middot; No Switching Required</strong>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" style="text-decoration:none;">
+      <svg width="240" height="38" viewBox="0 0 240 38" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L28 4 L28 22 C28 30 16 34 16 34 C16 34 4 30 4 22 Z" fill="#0A1F3D" stroke="#C5A572" stroke-width="1.3"/>
+        <text x="16" y="22" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600" fill="#C5A572" text-anchor="middle">T</text>
+        <text x="40" y="25" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#0A1F3D" letter-spacing="-0.3">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <a href="tel:+14255679668" class="nav-phone">
+      <span>Call or Text</span>
+      (425) 567-9668
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Free Policy Review</div>
+      <h1>Is your life insurance <em>still the right fit?</em></h1>
+      <p class="lede">Most policies were right the day they were signed &mdash; and slowly became wrong. Family changes. Income changes. The market changes. A free, independent review tells you honestly where you stand &mdash; even if the answer is "keep what you have."</p>
+
+      <div class="problem-list">
+        <div class="problem-list-title">This review is for you if&hellip;</div>
+        <ul>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 L8 15 L17 5"/></svg>
+            <span>You bought a policy more than 3&ndash;5 years ago and haven&rsquo;t looked at it since</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 L8 15 L17 5"/></svg>
+            <span>Your life has changed &mdash; marriage, kids, home purchase, business, income jump</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 L8 15 L17 5"/></svg>
+            <span>You suspect you&rsquo;re overpaying but don&rsquo;t know where to start</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 L8 15 L17 5"/></svg>
+            <span>Your term policy is approaching expiration</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 L8 15 L17 5"/></svg>
+            <span>You have a permanent policy (whole life, IUL) and aren&rsquo;t sure if it&rsquo;s performing as sold</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <form class="lead-form" id="leadForm" action="https://formsubmit.co/review@trustlifesolutions.com" method="POST">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New Policy Review Request — Trust Life Solutions">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://trustlifesolutions.com/thank-you-review.html">
+      <input type="hidden" name="_honey" value="">
+      <input type="hidden" name="_autoresponse" value="Thank you for requesting a policy review from Trust Life Solutions. I'll personally reach out within one business day to set up a short consultation and review your current coverage together. If your need is urgent, call or text me at (425) 567-9668. — Chris Ihler">
+      <div class="form-badge">FREE &middot; Independent</div>
+      <div class="form-title">Request a Policy Review</div>
+      <div class="form-subtitle">Tell me about your current policy. I&rsquo;ll reach out within one business day to schedule a short review consultation.</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" required autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label for="state">State</label>
+        <select id="state" name="state" required>
+          <option value="">Select</option>
+          <option>Washington</option>
+          <option>Oregon</option>
+          <option>California</option>
+          <option>Nevada</option>
+          <option>Idaho</option>
+          <option>Michigan</option>
+          <option>Ohio</option>
+          <option>Virginia</option>
+          <option>South Carolina</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="policy_type">Current Policy Type</label>
+        <select id="policy_type" name="policy_type">
+          <option value="">Not sure</option>
+          <option>Term Life</option>
+          <option>Whole Life</option>
+          <option>Universal Life / IUL</option>
+          <option>Variable Life</option>
+          <option>Multiple Policies</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="notes">Anything you&rsquo;d like us to know? (optional)</label>
+        <textarea id="notes" name="notes" placeholder="e.g., 'My term expires in 2 years' or 'I think I'm paying too much'"></textarea>
+      </div>
+
+      <div class="consent-block">
+        <!-- Hidden consent tracking fields (captured at submission) -->
+        <input type="hidden" name="consent_version" value="2026.04.21.v1">
+        <input type="hidden" name="consent_source_url" value="https://trustlifesolutions.com/review">
+        <input type="hidden" name="consent_captured_at" id="consentCapturedAt" value="">
+
+        <label>
+          <input type="checkbox" name="consent_contact" value="yes" required>
+          <span><strong>Required.</strong> I authorize Trust Life Solutions to contact me by email and phone at the information I provided to follow up on my policy review request. I understand this consent applies only to my specific inquiry and is not a condition of any purchase.</span>
+        </label>
+        <label>
+          <input type="checkbox" name="consent_sms_ai" value="yes">
+          <span><strong>Optional &mdash; Text Messaging (incl. AI-assisted).</strong> I also authorize Trust Life Solutions to send me text messages &mdash; including messages that may be AI-assisted, automated, or drafted with AI technology &mdash; about my policy review, insurance products, appointment reminders, and related services. Message frequency varies (typically 2&ndash;10/month). Message and data rates may apply. Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for help. I can revoke this consent at any time. Consent is not a condition of purchase. See <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.</span>
+        </label>
+        <label>
+          <input type="checkbox" name="consent_voice_ai" value="yes">
+          <span><strong>Optional &mdash; Automated &amp; AI Voice Calls.</strong> I also authorize Trust Life Solutions to contact me with calls that may use prerecorded or AI-generated voices, automated telephone dialing systems, or automated voice technology for insurance-related communications at the phone number I provided &mdash; even if that number is on a state or federal Do Not Call list. Calls may be recorded for quality and compliance. I can revoke this consent at any time. Consent is not a condition of purchase.</span>
+        </label>
+      </div>
+
+      <button type="submit">Request My Review →</button>
+
+      <div class="form-footer">
+        We protect your data. Your info is never sold.<br>
+        <a href="/privacy" style="color: var(--navy); text-decoration: underline;">Privacy Policy</a> &middot; <a href="/terms" style="color: var(--navy); text-decoration: underline;">Terms</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <div class="eyebrow" style="justify-content: center;">What We Check</div>
+      <h2>Three questions <em>your current policy</em> needs to answer.</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <h3>1. Are you paying too much?</h3>
+        <p>Rates have dropped over the years for healthy non-smokers. If you qualified for "Standard" when you signed and now qualify for "Preferred Plus," a re-shop could cut your premium meaningfully &mdash; same coverage, better price.</p>
+      </div>
+      <div class="review-card">
+        <h3>2. Is the coverage still right?</h3>
+        <p>A $250k term policy made sense when you had no kids and no mortgage. Now you have both. We&rsquo;ll compare your current coverage to your actual current need &mdash; and show you the gap in dollars, not theory.</p>
+      </div>
+      <div class="review-card">
+        <h3>3. Is the policy actually performing?</h3>
+        <p>For permanent policies (whole life, IUL, universal life), we pull the in-force illustration and show you whether the policy is on track with what was originally sold &mdash; or if it&rsquo;s underperforming and needs restructure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scenarios">
+  <div class="scenarios-inner">
+    <h2>Real moments to <em>review a policy</em></h2>
+    <p class="sub">If any of these have happened in your life recently, your coverage likely needs a second look.</p>
+    <div class="scenario-grid">
+      <div class="scenario">
+        <strong>Got married or divorced</strong>
+        <p>Beneficiaries change. Coverage needs change. A divorce decree often requires updating or increasing coverage to secure child support obligations.</p>
+      </div>
+      <div class="scenario">
+        <strong>Had or adopted a child</strong>
+        <p>New dependent. New lifelong obligation. Most new parents are significantly underinsured relative to the income that would disappear if something happened.</p>
+      </div>
+      <div class="scenario">
+        <strong>Bought or refinanced a home</strong>
+        <p>A mortgage is the largest single debt most families carry. Your coverage should be sized so your family keeps the house &mdash; free and clear.</p>
+      </div>
+      <div class="scenario">
+        <strong>Major income change</strong>
+        <p>A raise, promotion, or new business venture changes the income your family depends on. Coverage sized to old income leaves a gap at the new one.</p>
+      </div>
+      <div class="scenario">
+        <strong>Term policy near expiration</strong>
+        <p>A 20-year term signed in 2008 expires in 2028. If you still need coverage, the time to lock in a new policy is <em>before</em> expiration, at your current age and health.</p>
+      </div>
+      <div class="scenario">
+        <strong>You quit smoking or lost weight</strong>
+        <p>Most carriers re-classify you after 12 months smoke-free. If you were rated as a smoker and are now preferred, you may cut your premium by 30&ndash;50% for the same coverage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; margin-bottom: 32px;">
+      <div style="max-width: 500px;">
+        <div style="font-family: 'Fraunces', serif; font-size: 22px; color: var(--cream); margin-bottom: 12px;">Trust Life Solutions</div>
+        <p style="line-height: 1.7;">Independent life insurance advisory. Chris Ihler, Licensed Insurance Advisor. National Producer #21599086.</p>
+      </div>
+      <div>
+        <div style="color: var(--gold); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px;">Contact</div>
+        <div style="line-height: 1.8;">
+          <a href="tel:+14255679668" style="color: var(--cream); text-decoration: none;">(425) 567-9668</a><br>
+          <a href="mailto:chris@trustlifesolutions.com" style="color: var(--cream); text-decoration: none;">chris@trustlifesolutions.com</a><br>
+          310 W 3rd St, Moscow, ID 83843
+        </div>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <p><strong style="color: var(--cream);">Trust Life Solutions</strong> is a d/b/a of Ihler Ventures LLC, an Idaho limited liability company. Chris Ihler is a licensed insurance producer in Washington, Oregon, California, Nevada, Idaho, Michigan, Ohio, Virginia, and South Carolina. National Producer Number 21599086. Insurance products are offered through various carriers; coverage is subject to the terms, conditions, and limitations of the applicable policy. Not all products are available in all states. Trust Life Solutions is not affiliated with any government agency and does not offer investment advisory services.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+      <p style="margin-top: 20px;">© 2026 Ihler Ventures LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Capture consent timestamp at form load for compliance audit trail
+  (function() {
+    var el = document.getElementById('consentCapturedAt');
+    if (el) { el.value = new Date().toISOString(); }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5 Life Insurance Mistakes That Cost Families Thousands</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.6in 0.75in;
+  }
+  @page :first {
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1A1A1A;
+    line-height: 1.55;
+    font-size: 11pt;
+  }
+
+  /* COVER */
+  .cover {
+    page-break-after: always;
+    background: linear-gradient(135deg, #0A1F3D 0%, #061428 100%);
+    color: #F8F5EF;
+    height: 100vh;
+    padding: 1in 0.9in;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 165, 114, 0.2) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 165, 114, 0.15) 0%, transparent 70%);
+  }
+  .cover-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 100px;
+    position: relative;
+  }
+  .cover-logo-icon {
+    width: 44px; height: 44px;
+    border: 2px solid #C5A572;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C5A572;
+    font-weight: 600;
+    font-size: 16pt;
+    font-family: Georgia, serif;
+  }
+  .cover-logo-text {
+    font-family: Georgia, serif;
+    font-size: 18pt;
+    font-weight: 500;
+    color: #F8F5EF;
+    letter-spacing: -0.3px;
+  }
+  .cover-eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #C5A572;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .cover-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 1px;
+    background: #C5A572;
+    margin-right: 16px;
+    vertical-align: middle;
+  }
+  .cover-title {
+    font-family: Georgia, serif;
+    font-size: 50pt;
+    line-height: 1;
+    font-weight: 400;
+    color: #F8F5EF;
+    margin-bottom: 28px;
+    letter-spacing: -1.5pt;
+    position: relative;
+  }
+  .cover-title em {
+    font-style: italic;
+    color: #C5A572;
+  }
+  .cover-subtitle {
+    font-size: 15pt;
+    line-height: 1.4;
+    color: #C8CCD6;
+    max-width: 6in;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 120px;
+    position: relative;
+  }
+  .cover-meta {
+    position: absolute;
+    bottom: 0.9in;
+    left: 0.9in;
+    right: 0.9in;
+    border-top: 1px solid rgba(197, 165, 114, 0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    color: #9AA3B5;
+    letter-spacing: 0.05em;
+  }
+  .cover-meta .by {
+    color: #C5A572;
+    font-size: 10pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cover-meta .name {
+    color: #F8F5EF;
+    font-family: Georgia, serif;
+    font-size: 15pt;
+  }
+
+  /* CONTENT PAGES */
+  .content-page { padding-top: 0.2in; }
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 28pt;
+    font-weight: 400;
+    color: #0A1F3D;
+    letter-spacing: -0.8pt;
+    margin-bottom: 14pt;
+    line-height: 1.05;
+  }
+  h1 em { font-style: italic; color: #C5A572; }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    font-weight: 500;
+    color: #0A1F3D;
+    letter-spacing: -0.5pt;
+    margin-top: 28pt;
+    margin-bottom: 10pt;
+    line-height: 1.15;
+  }
+  h2 em { font-style: italic; color: #C5A572; }
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #0A1F3D;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+  }
+
+  p { margin-bottom: 10pt; }
+  ul { margin-bottom: 12pt; padding-left: 22pt; }
+  ul li { margin-bottom: 6pt; }
+  strong { color: #0A1F3D; font-weight: 600; }
+
+  .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C5A572;
+    font-weight: 600;
+    margin-bottom: 12pt;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: #C5A572;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+
+  /* MISTAKE BLOCKS */
+  .mistake {
+    page-break-inside: avoid;
+    page-break-before: always;
+    padding-top: 40pt;
+  }
+  .mistake-number {
+    font-family: Georgia, serif;
+    font-size: 72pt;
+    color: #C5A572;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -3pt;
+    margin-bottom: 8pt;
+  }
+  .mistake-eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C5A572;
+    font-weight: 600;
+    margin-bottom: 12pt;
+  }
+  .mistake h2 {
+    margin-top: 0;
+    margin-bottom: 18pt;
+    font-size: 26pt;
+  }
+
+  .callout {
+    background: #F8F5EF;
+    border-left: 3pt solid #C5A572;
+    padding: 16pt 20pt;
+    margin: 16pt 0;
+    page-break-inside: avoid;
+  }
+  .callout-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C5A572;
+    font-weight: 600;
+    margin-bottom: 6pt;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .fix-box {
+    background: #0A1F3D;
+    color: #F8F5EF;
+    padding: 18pt 22pt;
+    margin: 20pt 0;
+    border-radius: 3pt;
+    page-break-inside: avoid;
+  }
+  .fix-box .fix-label {
+    color: #C5A572;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8pt;
+  }
+  .fix-box h3 {
+    color: #F8F5EF;
+    margin-top: 0;
+    margin-bottom: 8pt;
+    font-size: 15pt;
+  }
+  .fix-box p { color: #C8CCD6; margin-bottom: 6pt; }
+  .fix-box p:last-child { margin-bottom: 0; }
+
+  /* INTRO PAGE */
+  .intro { padding-top: 40pt; }
+  .intro-lead {
+    font-size: 13pt;
+    line-height: 1.55;
+    color: #4A4A4A;
+    font-style: italic;
+    margin-bottom: 24pt;
+    max-width: 6in;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+  th {
+    background: #0A1F3D;
+    color: #F8F5EF;
+    text-align: left;
+    padding: 8pt 10pt;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  td {
+    padding: 8pt 10pt;
+    border-bottom: 0.5pt solid #E5DFD3;
+  }
+  tr:nth-child(even) td { background: #F8F5EF; }
+
+  /* CLOSING PAGE */
+  .closing {
+    page-break-before: always;
+    padding-top: 40pt;
+    text-align: center;
+  }
+  .closing-cta {
+    background: #0A1F3D;
+    color: #F8F5EF;
+    padding: 36pt 32pt;
+    margin: 24pt auto 0;
+    max-width: 5in;
+    text-align: left;
+    border-radius: 3pt;
+  }
+  .closing-cta h2 {
+    color: #F8F5EF;
+    margin-top: 0;
+    margin-bottom: 10pt;
+    font-size: 22pt;
+  }
+  .closing-cta h2 em { color: #C5A572; }
+  .closing-cta p { color: #C8CCD6; margin-bottom: 10pt; }
+  .closing-cta .contact {
+    margin-top: 18pt;
+    padding-top: 14pt;
+    border-top: 1pt solid rgba(197, 165, 114, 0.3);
+    font-family: Georgia, serif;
+  }
+  .closing-cta .contact strong { color: #C5A572; font-size: 13pt; }
+  .closing-cta .contact div { color: #F8F5EF; margin-top: 4pt; font-size: 11pt; }
+
+  .footer-mini {
+    margin-top: 36pt;
+    padding-top: 12pt;
+    border-top: 0.5pt solid #E5DFD3;
+    font-size: 8pt;
+    color: #888;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+  }
+</style>
+<link rel="icon" type="image/svg+xml" href="brand-assets/favicon.svg">
+<link rel="apple-touch-icon" href="brand-assets/favicon.svg">
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<section class="cover">
+  <div class="cover-logo">
+    <div class="cover-logo-icon">T</div>
+    <div class="cover-logo-text">Trust Life Solutions</div>
+  </div>
+
+  <div class="cover-eyebrow">A Free Guide</div>
+
+  <h1 class="cover-title">5 Life Insurance<br>Mistakes <em>That Cost Families</em> Thousands.</h1>
+
+  <p class="cover-subtitle">Most people don't know they've made these mistakes until it's too late to fix them. This guide tells you what they are — and how to fix each one in the next 30 days.</p>
+
+  <div class="cover-meta">
+    <div>
+      <div class="by">By</div>
+      <div class="name">Chris Ihler</div>
+      <div style="margin-top: 2px;">Licensed Insurance Advisor · NPN 21599086</div>
+    </div>
+    <div style="text-align: right;">
+      <div>trustlifesolutions.com</div>
+      <div style="margin-top: 2px;">(425) 567-9668</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="content-page intro">
+
+<div class="eyebrow">Before We Begin</div>
+<h1>Why this guide exists.</h1>
+
+<p class="intro-lead">After hundreds of conversations with families about life insurance, five mistakes keep coming up — and each one costs real money or real coverage.</p>
+
+<p>Life insurance is simple in concept and messy in practice. Most people don't buy it because no one ever explained it clearly. Those who do buy it often bought the wrong thing from the wrong person for the wrong reasons.</p>
+
+<p>This short guide walks you through the five most common — and most expensive — mistakes families make. Each one includes a "quick fix" you can act on today, even if you're not ready to talk to an advisor.</p>
+
+<p>I wrote this for people who want to make smart decisions without being sold to. Read it in ten minutes. Act on what resonates. Ignore what doesn't.</p>
+
+<div class="callout">
+  <div class="callout-label">A Promise</div>
+  <p>There is no hidden sales pitch in this document. Nothing on the next few pages is designed to pressure you into anything. If you want a conversation at the end, I'd welcome it. If you don't, take the guide and use it. Either way, thank you for reading.</p>
+</div>
+
+<h2>Who I am — and why I wrote this.</h2>
+
+<p>I'm Chris Ihler. I run Trust Life Solutions, a fully independent insurance advisory based in the Pacific Northwest. I'm licensed in nine states and I represent 20+ A-rated carriers.</p>
+
+<p>Because I'm independent — not captive to a single insurance company — I have no incentive to push one product over another. My compensation comes from whichever carrier my client ultimately chooses, and it's roughly the same regardless. That alignment is the whole point.</p>
+
+<p>What you'll find in these pages is what I actually tell clients during free consultations. I don't hold secrets for people who pay me. The playbook is here. Use it.</p>
+
+</section>
+
+<!-- MISTAKE 1 -->
+<section class="mistake">
+  <div class="mistake-number">01</div>
+  <div class="mistake-eyebrow">Mistake Number One</div>
+  <h2>Assuming your employer coverage is <em>enough.</em></h2>
+
+  <p>The most common life insurance someone has is a group policy through their employer. It's free or nearly free, the enrollment is automatic during onboarding, and the amount feels reassuring: "I have insurance through work."</p>
+
+  <p>The problem is that group life coverage is almost always <strong>too small</strong>, and it almost always <strong>disappears when you leave the job</strong> — whether you quit, get laid off, or retire.</p>
+
+  <h3>Why it's too small</h3>
+  <p>Most employer policies provide 1–2 times your annual salary. That's it. If you earn $90,000, you have $90,000–$180,000 in coverage.</p>
+
+  <p>Consider what a family of four actually needs if a primary earner dies: pay off the mortgage ($350,000), replace income for 15 years ($1,350,000), fund two kids' college ($180,000), plus final expenses ($25,000) — about <strong>$1.9 million in protection</strong>. The $180,000 from work covers less than 10% of that need.</p>
+
+  <h3>Why it disappears</h3>
+  <p>Group coverage is "portable" only in the loosest sense. When you leave the job, most plans give you 30–60 days to convert to individual coverage, and the rate is typically 3–5 times higher than what you'd pay on the open market at the same age and health.</p>
+
+  <p>Worse: if you've developed any health condition during your time at the employer — a diabetes diagnosis, a cardiac event, depression, a cancer scare — you may not qualify for individual coverage at any reasonable rate.</p>
+
+  <div class="fix-box">
+    <div class="fix-label">The Quick Fix</div>
+    <h3>Build a private policy as the foundation. Treat group coverage as a bonus.</h3>
+    <p>For a healthy 35-year-old nonsmoker, $500,000 in 20-year term life insurance typically runs $22–$35 per month. That's real, portable, permanent coverage that stays with you regardless of where you work.</p>
+    <p>The employer coverage then becomes a supplement, not the whole plan — and you're not one job change away from being uninsurable.</p>
+  </div>
+</section>
+
+<!-- MISTAKE 2 -->
+<section class="mistake">
+  <div class="mistake-number">02</div>
+  <div class="mistake-eyebrow">Mistake Number Two</div>
+  <h2>Paying for the <em>wrong type</em> of policy.</h2>
+
+  <p>There are three broad categories of life insurance most families will encounter: <strong>term</strong>, <strong>whole life</strong>, and <strong>indexed universal life (IUL)</strong>. Each solves a different problem. Most families are sold the wrong one because the person selling it earned a bigger commission on something else.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Type</th>
+        <th style="width: 23%;">Cost</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Term Life</strong></td>
+        <td>$20–$80/mo for $500k</td>
+        <td>Most families with kids, mortgages, or income to replace. Temporary need.</td>
+      </tr>
+      <tr>
+        <td><strong>Whole Life</strong></td>
+        <td>$250–$600/mo for $500k</td>
+        <td>High earners with permanent need. Legacy planning. Tax-advantaged cash value.</td>
+      </tr>
+      <tr>
+        <td><strong>IUL</strong></td>
+        <td>$150–$500/mo for $500k</td>
+        <td>High earners looking for tax-advantaged growth. Complex — requires ongoing management.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The honest rule of thumb: <strong>90% of families need term, 9% need whole life or IUL, and 1% need some combination.</strong></p>
+
+  <p>If someone is pushing you toward whole life or IUL before fully understanding your financial picture, your existing coverage, your retirement accounts, and your actual protection needs — get a second opinion. The most expensive product isn't automatically the best product for you.</p>
+
+  <div class="callout">
+    <div class="callout-label">Signs You May Have Been Sold the Wrong Type</div>
+    <p>You're paying more than $100/month for a "small" policy ($100k–$250k face amount). Your policy has more than 5 riders you don't understand. You were told this policy would "pay for itself" through cash value growth. Your agent wouldn't explain how their commission was calculated.</p>
+  </div>
+
+  <div class="fix-box">
+    <div class="fix-label">The Quick Fix</div>
+    <h3>Pull your in-force illustration.</h3>
+    <p>Call your current insurance company and request an "in-force illustration." It's a document that shows exactly what your policy is projected to do over time — death benefit, cash value, premiums. It's free.</p>
+    <p>Have an independent advisor review it. If your current setup doesn't fit your situation, you'll know. Many carriers let you convert or replace coverage without medical re-underwriting if you act while you're still healthy.</p>
+  </div>
+</section>
+
+<!-- MISTAKE 3 -->
+<section class="mistake">
+  <div class="mistake-number">03</div>
+  <div class="mistake-eyebrow">Mistake Number Three</div>
+  <h2>Waiting to buy until you <em>"really need it."</em></h2>
+
+  <p>Life insurance gets more expensive with every birthday. And it gets dramatically more expensive if your health changes.</p>
+
+  <p>A healthy 30-year-old male can lock in $500,000 of 20-year term life insurance for about $18 per month. That same coverage, purchased at age 50, costs about $69 per month — nearly four times more.</p>
+
+  <p>But here's what most people don't realize: the number you lock in today is the number you pay for the entire term. If a 30-year-old locks in $18/month on a 20-year policy, they're paying $18/month even at age 50 — because the rate is level for the full term.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Age at Purchase</th>
+        <th>Male / $500K / 20-Year</th>
+        <th>Female / $500K / 20-Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>30</td><td>$18/mo</td><td>$15/mo</td></tr>
+      <tr><td>35</td><td>$23/mo</td><td>$20/mo</td></tr>
+      <tr><td>40</td><td>$28/mo</td><td>$24/mo</td></tr>
+      <tr><td>45</td><td>$45/mo</td><td>$38/mo</td></tr>
+      <tr><td>50</td><td>$69/mo</td><td>$54/mo</td></tr>
+      <tr><td>55</td><td>$120/mo</td><td>$95/mo</td></tr>
+      <tr><td>60</td><td>$200/mo</td><td>$140/mo</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size: 9pt; color: #888; font-style: italic;">Preferred Plus rate class, nonsmoker. Actual rates depend on carrier, state, and underwriting.</p>
+
+  <h3>The health change problem</h3>
+  <p>Age is one lever. Health is the bigger one. A single diagnosis can move you from "Preferred Plus" (the best rate class) to "Standard" — roughly doubling your premium. A more serious condition can make you uninsurable entirely at reasonable rates.</p>
+
+  <p>No one plans for a diagnosis. That's the point.</p>
+
+  <div class="fix-box">
+    <div class="fix-label">The Quick Fix</div>
+    <h3>Lock in your current rating now. Adjust the amount later.</h3>
+    <p>The goal isn't to buy the perfect policy. It's to lock in your current health and age rating while you still qualify for it. You can always increase coverage later. You can always decrease. You can rarely improve your health rating once it's set.</p>
+    <p>Start with what you can afford today. Even a $250,000, 20-year term policy at $15–$20/mo is more protection than nothing — and it's yours to expand on.</p>
+  </div>
+</section>
+
+<!-- MISTAKE 4 -->
+<section class="mistake">
+  <div class="mistake-number">04</div>
+  <div class="mistake-eyebrow">Mistake Number Four</div>
+  <h2>Forgetting about your <em>mortgage.</em></h2>
+
+  <p>For most homeowners, the mortgage is the single largest debt they'll ever carry. A typical American household with a home carries $200,000 to $500,000 of mortgage debt for 15 to 30 years.</p>
+
+  <p>If the primary earner dies, the mortgage doesn't go away. The bank doesn't care about the circumstances. The payments are due the month after the funeral.</p>
+
+  <p>Employer life insurance — the 1–2x salary number — won't pay off most mortgages. An emergency fund that covers three to six months of expenses won't pay off a 25-year mortgage. Social Security survivor benefits are real but limited.</p>
+
+  <p>What happens in practice: the surviving spouse has to sell the home, usually within 12–18 months, often at a loss during a difficult time. The kids change schools. The family moves in with relatives. The grief is compounded by uprooting.</p>
+
+  <h3>The simple, affordable fix: mortgage protection</h3>
+
+  <p>Mortgage protection is just term life insurance sized to your mortgage balance and term length. If you have a $400,000 mortgage with 25 years left, you buy a $400,000, 25-year term policy. If you die, the policy pays off the mortgage. The family keeps the home, free and clear.</p>
+
+  <p>For a healthy 35-year-old nonsmoker, $400,000 of 25-year term runs about $28–$40 per month. Most homeowners are shocked how affordable it is — and how few of them have it.</p>
+
+  <div class="callout">
+    <div class="callout-label">The Honest Math</div>
+    <p>A $400,000 mortgage protection policy at $32/month costs $384 per year. Over 25 years, you'll pay roughly $9,600 — less than a single mortgage payment for most families. If something happens, your family gets $400,000 tax-free to eliminate the debt. The ratio is absurd. Few financial products in the world have this risk-to-benefit profile.</p>
+  </div>
+
+  <div class="fix-box">
+    <div class="fix-label">The Quick Fix</div>
+    <h3>Size the coverage to the mortgage.</h3>
+    <p>Pull your current mortgage statement. Find the remaining balance and remaining term. Get a quote on term life insurance at that face amount and length. For most homeowners under 50 in decent health, the monthly premium will be less than a streaming subscription bundle.</p>
+  </div>
+</section>
+
+<!-- MISTAKE 5 -->
+<section class="mistake">
+  <div class="mistake-number">05</div>
+  <div class="mistake-eyebrow">Mistake Number Five</div>
+  <h2>Buying from someone who <em>only has one product</em> to sell.</h2>
+
+  <p>The insurance industry has two kinds of agents: captive and independent.</p>
+
+  <p>A <strong>captive agent</strong> works for one company. They sell that company's products. If you talk to an agent from State Farm, New York Life, or Northwestern Mutual, they're captive. Their recommendations are limited to what their employer sells — even if a competitor has a better product for your situation.</p>
+
+  <p>An <strong>independent agent (or broker)</strong> represents many companies. They shop the market on your behalf and recommend the policy that actually fits, from the carrier that offers the best rate for your specific health and situation.</p>
+
+  <p>Neither is inherently bad. Captive agents are often well-trained and their companies are financially strong. But captive agents can only show you one piece of the puzzle.</p>
+
+  <h3>Why independence matters more than you think</h3>
+
+  <p>Every A-rated carrier has its own underwriting guidelines. One carrier might rate you as "Preferred" if you have well-controlled high blood pressure; another might rate you as "Standard." The premium difference between those two classifications on a $500,000 policy is typically $15–$25 per month — roughly $5,000 over the life of a 20-year term.</p>
+
+  <p>A captive agent can't show you the carrier that would underwrite you better. An independent one can — and will.</p>
+
+  <div class="callout">
+    <div class="callout-label">The Red Flag</div>
+    <p>If someone quoted you on exactly one policy from exactly one company, they are likely captive. Ask directly: "Are you captive with one carrier, or are you independent and shopping multiple companies for me?" The answer tells you everything about the quality of recommendation you're getting.</p>
+  </div>
+
+  <div class="fix-box">
+    <div class="fix-label">The Quick Fix</div>
+    <h3>Get an independent second opinion. It's free.</h3>
+    <p>Any policy you're currently considering — or currently own — can be reviewed by an independent advisor at no cost. If your current policy is the best option, they'll tell you so. If it isn't, you'll see real alternatives side-by-side.</p>
+    <p>The worst outcome of getting a second opinion is confirmation you already had the right thing. The best outcome is saving thousands of dollars or meaningfully increasing your coverage at the same cost.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+
+<div class="eyebrow" style="justify-content: center;">Next Steps</div>
+<h1 style="margin-bottom: 16pt;">What to do <em>this week.</em></h1>
+
+<p style="max-width: 5.5in; margin: 0 auto 20pt; text-align: left;">The point of this guide isn't to alarm you. It's to give you specific actions to take while there's still time.</p>
+
+<div style="max-width: 5.5in; margin: 0 auto; text-align: left;">
+
+<h3>If you have no life insurance at all:</h3>
+<p>Get quoted on term life insurance this week. Even if you don't buy, you'll know the number. For most healthy people under 50, it costs less than a dinner out per month to protect a family from financial catastrophe.</p>
+
+<h3>If you only have employer coverage:</h3>
+<p>Assume that coverage will disappear on the day you leave the job. Build a private policy as your foundation.</p>
+
+<h3>If you have a mortgage and less than $500k in total life insurance:</h3>
+<p>Add a mortgage protection policy sized to your loan balance. The monthly premium is almost always trivial relative to the risk it covers.</p>
+
+<h3>If you have an old policy you haven't reviewed in 3+ years:</h3>
+<p>Request the in-force illustration from your carrier. Have an independent advisor review it. No cost, no obligation — just a second set of eyes.</p>
+
+<h3>If you've been sold whole life or IUL and aren't sure if it fits:</h3>
+<p>Get an independent review. If the product fits, great. If it doesn't, many carriers allow replacement without medical re-underwriting if you act while you're still healthy.</p>
+
+</div>
+
+<div class="closing-cta">
+  <h2>Want an <em>honest second opinion?</em></h2>
+  <p>If you want to talk through your specific situation with no cost and no pressure, I'd welcome the conversation.</p>
+  <p>I run free policy reviews and quote consultations across 20+ A-rated carriers. Fifteen minutes on the phone and you'll know where you stand. If the math doesn't work for you, I'll say so.</p>
+  <div class="contact">
+    <strong>Chris Ihler</strong>
+    <div>Licensed Insurance Advisor · NPN 21599086</div>
+    <div style="margin-top: 10px;">📱 (425) 567-9668</div>
+    <div>✉️ chris@trustlifesolutions.com</div>
+    <div>🌐 trustlifesolutions.com</div>
+  </div>
+</div>
+
+<div class="footer-mini">
+  Trust Life Solutions is a d/b/a of Ihler Ventures LLC, an Idaho limited liability company. Chris Ihler is a licensed insurance producer in Washington, Oregon, California, Nevada, Idaho, Michigan, Ohio, Virginia, and South Carolina (NPN 21599086). This document is informational only and not intended as tax, legal, or investment advice. Insurance products and rates are subject to carrier underwriting and state availability. Rate estimates shown are illustrative and not guaranteed quotes.
+</div>
+
+</section>
+
+</body>
+</html>

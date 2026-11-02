@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Expense Insurance — Trust Life Solutions</title>
+<meta name="description" content="Final expense (burial) insurance: no medical exam, guaranteed for life, coverage from $5,000 to $50,000. Independent advisor shops multiple carriers.">
+<link rel="icon" type="image/svg+xml" href="/brand-assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057; --gold: #C5A572; --gold-bright: #D4B886; --gold-soft: #E8D9B8; --gold-dark: #8B6F3F; --cream: #F8F5EF; --cream-warm: #EFEBE0; --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3; --green: #5C8A4C; --red: #C84B4B; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', -apple-system, sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; font-size: 18px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--navy); }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; color: var(--navy); line-height: 1.1; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; }
+  nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 32px; flex-wrap: wrap; gap: 16px; }
+  .logo svg { height: 36px; width: auto; }
+  .nav-links { display: flex; gap: 32px; align-items: center; font-size: 15px; font-weight: 500; }
+  .nav-links > a, .nav-dropdown-trigger { color: var(--charcoal); opacity: 0.8; transition: opacity 0.2s; text-decoration: none; cursor: pointer; }
+  .nav-links > a:hover, .nav-dropdown-trigger:hover { opacity: 1; color: var(--navy); }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; background: transparent; border: none; font: inherit; padding: 0; }
+  .nav-dropdown-trigger::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-left: 4px; margin-top: 2px; transition: transform 0.2s; }
+  .nav-dropdown:hover .nav-dropdown-trigger::after, .nav-dropdown:focus-within .nav-dropdown-trigger::after { transform: rotate(180deg); }
+  .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translate(-50%, -8px); min-width: 260px; background: white; border: 1px solid var(--line); border-radius: 4px; padding: 10px 0; margin-top: 14px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; box-shadow: 0 12px 32px rgba(10, 31, 61, 0.10); z-index: 200; }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .nav-dropdown-menu a { display: block; padding: 10px 22px; color: var(--charcoal); font-size: 14.5px; font-weight: 500; opacity: 0.85; text-decoration: none; transition: all 0.15s; }
+  .nav-dropdown-menu a:hover { background: var(--cream); color: var(--navy); opacity: 1; }
+  .nav-dropdown-menu hr { border: none; border-top: 1px solid var(--line); margin: 8px 0; }
+  .nav-dropdown-menu a.dropdown-all { font-size: 13px; color: var(--gold-dark); font-weight: 600; letter-spacing: 0.05em; }
+  .nav-cta { background: var(--navy); color: var(--cream) !important; padding: 11px 24px; border-radius: 2px; opacity: 1 !important; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; }
+  .nav-cta:hover { background: var(--navy-light); }
+  @media (max-width: 920px) { .nav-links > a:not(.nav-cta), .nav-dropdown { display: none; } }
+  .hero { padding: 80px 0 60px; background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: var(--cream); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(ellipse at top right, rgba(197, 165, 114, 0.12) 0%, transparent 60%); pointer-events: none; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .breadcrumb { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; font-weight: 500; }
+  .breadcrumb a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+  .breadcrumb a:hover { opacity: 1; }
+  .hero h1 { font-size: clamp(38px, 5.5vw, 56px); color: var(--cream); margin-bottom: 22px; font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-lede { font-size: 19px; color: rgba(248, 245, 239, 0.82); line-height: 1.5; margin-bottom: 32px; max-width: 600px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 28px; font-size: 15px; font-weight: 500; border-radius: 2px; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: inherit; cursor: pointer; border: none; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-soft); }
+  .btn-secondary { background: transparent; color: var(--cream); border: 1px solid rgba(248, 245, 239, 0.35); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-card { background: rgba(248, 245, 239, 0.06); border: 1px solid rgba(197, 165, 114, 0.3); padding: 32px; border-radius: 4px; backdrop-filter: blur(8px); }
+  .hero-card-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+  .hero-card h3 { color: var(--cream); font-size: 20px; margin-bottom: 18px; font-weight: 500; line-height: 1.3; }
+  .hero-card ul { list-style: none; }
+  .hero-card li { padding: 8px 0; border-bottom: 1px solid rgba(248, 245, 239, 0.08); font-size: 14px; color: rgba(248, 245, 239, 0.85); display: flex; gap: 10px; align-items: flex-start; }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li::before { content: '●'; color: var(--gold); font-size: 8px; margin-top: 7px; }
+  main { padding: 72px 0 96px; background: white; }
+  main h2 { font-size: 34px; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.02em; font-weight: 500; }
+  main h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  main h3 { font-size: 22px; margin: 40px 0 12px; color: var(--navy); font-weight: 500; }
+  main p { margin-bottom: 22px; color: var(--charcoal); font-size: 18px; line-height: 1.75; }
+  main ul, main ol { margin: 0 0 24px 24px; }
+  main ul li, main ol li { margin-bottom: 10px; color: var(--charcoal); line-height: 1.65; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 18px; }
+  section.block { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section.block:last-of-type { border-bottom: none; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 32px 0; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 24px; } }
+  .pro-col, .con-col { padding: 28px; border-radius: 4px; }
+  .pro-col { background: rgba(92, 138, 76, 0.06); border-left: 3px solid var(--green); }
+  .con-col { background: rgba(200, 75, 75, 0.04); border-left: 3px solid var(--red); }
+  .pro-col h4, .con-col h4 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; }
+  .pro-col h4 { color: var(--green); }
+  .con-col h4 { color: var(--red); }
+  .pro-col ul, .con-col ul { margin: 0 0 0 20px; }
+  .pro-col li, .con-col li { margin-bottom: 8px; font-size: 15px; }
+  .fit-box { background: var(--cream); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 32px 0; border-radius: 2px; }
+  .fit-box h4 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy); font-weight: 500; margin-bottom: 14px; }
+  .fit-box ul { margin: 0 0 0 20px; }
+  .fit-box li { margin-bottom: 8px; font-size: 16px; }
+  .stat-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); margin: 40px 0; border: 1px solid var(--line); }
+  @media (max-width: 720px) { .stat-bar { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell { background: white; padding: 28px 20px; text-align: center; }
+  .stat-v { font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); font-weight: 500; margin-bottom: 4px; letter-spacing: -0.02em; }
+  .stat-l { font-size: 11px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; font-weight: 500; }
+  .cta-band { background: var(--navy); color: var(--cream); padding: 72px 0; text-align: center; }
+  .cta-band h2 { color: var(--cream); font-size: 36px; margin-bottom: 18px; font-weight: 400; }
+  .cta-band h2 em { color: var(--gold); font-style: italic; }
+  .cta-band p { font-size: 18px; color: rgba(248, 245, 239, 0.82); margin-bottom: 32px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
+  .cta-band .btn-primary:hover { background: var(--gold-soft); }
+  .faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--line); }
+  .faq summary { font-family: 'Fraunces', serif; font-size: 19px; color: var(--navy); cursor: pointer; list-style: none; padding-right: 32px; position: relative; font-weight: 500; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--gold); transition: transform 0.2s; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details p { margin: 14px 0 0; color: var(--stone); font-size: 16px; line-height: 1.65; }
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; line-height: 1.8; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .product-links { background: var(--cream); padding: 56px 0; }
+  .product-links h3 { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; text-align: center; }
+  .product-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .product-chip { padding: 10px 18px; background: white; border: 1px solid var(--line); border-radius: 24px; font-size: 14px; color: var(--navy); text-decoration: none; font-weight: 500; transition: all 0.2s; }
+  .product-chip:hover { border-color: var(--gold); color: var(--gold); }
+  .product-chip.current { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Trust Life Solutions Home">
+      <svg width="240" height="38" viewBox="0 0 240 38" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L28 4 L28 22 C28 30 16 34 16 34 C16 34 4 30 4 22 Z" fill="#0A1F3D" stroke="#C5A572" stroke-width="1.3"/>
+        <text x="16" y="22" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600" fill="#C5A572" text-anchor="middle">T</text>
+        <text x="40" y="25" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#0A1F3D" letter-spacing="-0.3">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="/#products" class="nav-dropdown-trigger">Coverage</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/products/term-life" role="menuitem">Term Life</a>
+          <a href="/products/whole-life" role="menuitem">Whole Life</a>
+          <a href="/products/iul" role="menuitem">Indexed Universal Life</a>
+          <a href="/products/final-expense" role="menuitem">Final Expense</a>
+          <a href="/products/mortgage-protection" role="menuitem">Mortgage Protection</a>
+          <a href="/products/annuities" role="menuitem">Annuities</a>
+          <hr>
+          <a href="/#products" class="dropdown-all" role="menuitem">All Coverage &rarr;</a>
+        </div>
+      </div>
+      <a href="/#process">How It Works</a>
+      <a href="/#about">About</a>
+      <a href="/review">Policy Review</a>
+      <a href="/quote" class="nav-cta">Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/#products">Coverage</a> &middot; Final Expense</div>
+        <h1>Final expense: <em>dignity and peace of mind</em> for your family.</h1>
+        <p class="hero-lede">Simplified-issue permanent life insurance designed to cover funeral, burial, and final medical costs. No medical exam. Guaranteed for life once approved.</p>
+        <div class="hero-cta">
+          <a href="/quote" class="btn btn-primary">Request a Free Consultation</a>
+          <a href="#learn" class="btn btn-secondary">Learn the Basics</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-eyebrow">Final Expense at a Glance</div>
+        <h3>Designed for ages 50&ndash;85. Simple and affordable.</h3>
+        <ul>
+          <li>Coverage typically $5,000 to $50,000</li>
+          <li>No medical exam required</li>
+          <li>Simple health questionnaire, issued in days</li>
+          <li>Fixed premium that never increases</li>
+          <li>Coverage that never expires (if premium paid)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="container narrow">
+
+<section class="block" id="learn">
+  <div class="eyebrow">The Basics</div>
+  <h2>What is <em>final expense insurance</em>?</h2>
+  <p>Final expense (sometimes called "burial insurance") is a small permanent life insurance policy designed to cover end-of-life costs: funeral, burial or cremation, final medical bills, and any small debts or obligations your loved ones would otherwise have to absorb.</p>
+  <p>Coverage is usually between $5,000 and $50,000. The application is simple &mdash; no medical exam, just a short health questionnaire. Approval happens in days, not weeks. Once the policy is issued, premium and coverage are locked for life.</p>
+  <p>The average U.S. funeral costs $8,000&ndash;$12,000. Combined with final medical bills and small debts, families are often left with $15,000&ndash;$25,000 in unexpected expenses at the worst possible moment. Final expense insurance solves that in the simplest way possible.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Who It's For</div>
+  <h2>Who final expense <em>is a good fit</em> for</h2>
+  <div class="fit-box">
+    <h4>Final expense is typically a strong fit if you&hellip;</h4>
+    <ul>
+      <li>Are between ages 50 and 85</li>
+      <li>Want to make sure your family doesn't carry funeral and final costs</li>
+      <li>Don't have existing life insurance, or have coverage that won't last a lifetime</li>
+      <li>Have some health conditions that might complicate a medical exam</li>
+      <li>Want something simple, affordable, and guaranteed</li>
+      <li>Are helping a parent plan for end-of-life expenses</li>
+    </ul>
+  </div>
+  <p>If you're younger than 50 with good health, term life usually delivers much more coverage per dollar. If you need larger permanent coverage (e.g., $250,000+), whole life or IUL may be a better fit. Final expense shines in the specific niche it was designed for.</p>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Strengths &amp; Trade-offs</div>
+  <h2>Honest pros and cons</h2>
+  <div class="two-col">
+    <div class="pro-col">
+      <h4>Strengths</h4>
+      <ul>
+        <li>No medical exam required</li>
+        <li>Simple application, quick approval</li>
+        <li>Coverage never expires</li>
+        <li>Premium never increases</li>
+        <li>Many people with health conditions qualify</li>
+        <li>Cash value builds slowly over time</li>
+      </ul>
+    </div>
+    <div class="con-col">
+      <h4>Trade-offs</h4>
+      <ul>
+        <li>Higher cost per dollar of coverage than term</li>
+        <li>Coverage usually capped at $25K&ndash;$50K</li>
+        <li>Graded-benefit policies have 2-year waiting period for full payout if significant health issues</li>
+        <li>Not suitable for large income-replacement needs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">Types of Final Expense</div>
+  <h2>Level vs. graded benefit</h2>
+  <p>There are three broad tiers of final expense policies based on your health:</p>
+  <ul>
+    <li><strong>Level benefit (preferred health):</strong> Full death benefit from day one. Available to those in reasonably good health. The lowest premium per $1,000 of coverage.</li>
+    <li><strong>Graded benefit (moderate health):</strong> Partial death benefit in the first 2 years (usually return of premium plus a small percentage), then full benefit thereafter. For those with more significant health conditions.</li>
+    <li><strong>Guaranteed issue:</strong> No health questions at all. 2-year waiting period before full benefit. Highest premium. Used as a last resort when other options aren't available.</li>
+  </ul>
+  <p>Part of my job is matching your specific health profile to the carrier that gives you the best tier. One carrier may classify a condition as level benefit while another requires graded. Independent shopping pays off here more than in almost any other product category.</p>
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="stat-v">50&ndash;85</div><div class="stat-l">Issue Ages</div></div>
+    <div class="stat-cell"><div class="stat-v">$5K&ndash;$50K</div><div class="stat-l">Typical Face</div></div>
+    <div class="stat-cell"><div class="stat-v">None</div><div class="stat-l">Medical Exam</div></div>
+    <div class="stat-cell"><div class="stat-v">Days</div><div class="stat-l">To Approval</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="eyebrow">What Happens Next</div>
+  <h2>How I help you <em>shop final expense</em></h2>
+  <ol>
+    <li><strong>Discovery call (15 min):</strong> We talk about your situation, what you want the policy to cover, and walk through a brief health questionnaire.</li>
+    <li><strong>Carrier matching:</strong> Based on your health profile, I identify which carriers are most likely to approve you at the best tier.</li>
+    <li><strong>Application call:</strong> Most final expense applications can be completed in one short follow-up call. Some carriers decision instantly; others within a few business days.</li>
+    <li><strong>Policy delivered:</strong> Once approved, I deliver the policy electronically or in person and make sure you understand exactly what you own.</li>
+  </ol>
+  <p><a href="/quote"><strong>Request a free quote</strong></a> and I'll reach out within one business day.</p>
+</section>
+
+<section class="block faq">
+  <div class="eyebrow">Common Questions</div>
+  <h2>Frequently asked</h2>
+  <details>
+    <summary>Can I qualify if I have diabetes, heart conditions, or cancer history?</summary>
+    <p>Very often, yes. Final expense carriers are specifically designed to underwrite older adults with health conditions. Depending on which condition, how it's controlled, and how long since diagnosis, you may qualify for level benefit, graded benefit, or guaranteed issue. Different carriers underwrite the same condition very differently &mdash; shopping matters.</p>
+  </details>
+  <details>
+    <summary>How is this different from "pre-paid funeral" plans?</summary>
+    <p>A pre-paid funeral plan is an arrangement with a specific funeral home. If you move, or if the funeral home goes out of business, the money can be hard to recover. Final expense insurance pays cash directly to your beneficiary, who can use it at any funeral home, for any purpose, anywhere.</p>
+  </details>
+  <details>
+    <summary>Does the death benefit pay quickly?</summary>
+    <p>Yes &mdash; final expense policies are designed to pay promptly, typically within days of the carrier receiving a death certificate and claim form. This is deliberate: the whole point is for the money to be available when funeral costs hit.</p>
+  </details>
+  <details>
+    <summary>I'm helping my parent &mdash; can I own the policy?</summary>
+    <p>Generally, yes. An adult child can often own a policy on a parent (with the parent's consent and participation in underwriting). The owner pays the premium and is the beneficiary. This is a common arrangement for adult children worried about their parent's end-of-life expenses.</p>
+  </details>
+  <details>
+    <summary>Can I cancel if I change my mind?</summary>
+    <p>Yes. All policies include a "free look" period (10&ndash;30 days depending on state) during which you can cancel for a full refund of premium paid. After that, you can surrender the policy at any time, though you won't recover the premiums you've paid unless the policy has built cash value.</p>
+  </details>
+</section>
+
+</div>
+</main>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Get a <em>final expense quote</em> &mdash; free, no obligation.</h2>
+    <p>Simple application, no exam, coverage that gives your family peace of mind.</p>
+    <a href="/quote" class="btn btn-primary">Request My Consultation</a>
+  </div>
+</section>
+
+<section class="product-links">
+  <div class="container">
+    <h3>Explore Other Coverage</h3>
+    <div class="product-chips">
+      <a class="product-chip" href="/products/term-life">Term Life</a>
+      <a class="product-chip" href="/products/whole-life">Whole Life</a>
+      <a class="product-chip" href="/products/iul">Indexed Universal Life</a>
+      <a class="product-chip current" href="/products/final-expense">Final Expense</a>
+      <a class="product-chip" href="/products/mortgage-protection">Mortgage Protection</a>
+      <a class="product-chip" href="/products/annuities">Annuities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. All rights reserved.<br>
+    <a href="/">Home</a> &middot;
+    <a href="/privacy">Privacy Policy</a> &middot;
+    <a href="/consumer-health-data-privacy">Consumer Health Data Privacy</a> &middot;
+    <a href="/terms">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

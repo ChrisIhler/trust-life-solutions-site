@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Policy Review Scorecard | Trust Life Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0A1F3D;
+    --navy-dark: #061428;
+    --gold: #C5A572;
+    --gold-dark: #A8895A;
+    --cream: #F8F5EF;
+    --paper: #FFFFFF;
+    --ink: #1A1A1A;
+    --muted: #6B6B6B;
+    --border: #E4DFD4;
+    --red: #C84B4B;
+    --amber: #D89B3C;
+    --green: #5C8A4C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    background: var(--cream); color: var(--ink);
+    line-height: 1.55; padding: 32px 16px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .shell { max-width: 900px; margin: 0 auto; }
+  .mast { text-align: center; padding: 24px 0 40px; }
+  .brand {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    color: var(--navy); letter-spacing: -0.01em;
+  }
+  .brand b { color: var(--gold); }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(30px, 4.5vw, 44px);
+    font-weight: 600; color: var(--navy);
+    margin: 20px 0 16px; letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+  .lead {
+    font-size: 17px; color: var(--muted);
+    max-width: 640px; margin: 0 auto 24px;
+  }
+  .pill {
+    display: inline-block; background: var(--gold);
+    color: var(--navy); font-size: 12px;
+    font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 5px 14px;
+    border-radius: 20px;
+  }
+  .card {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 14px; padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(10, 31, 61, 0.04);
+  }
+  h2 {
+    font-family: 'Fraunces', serif; font-size: 24px;
+    color: var(--navy); font-weight: 600; margin-bottom: 6px;
+  }
+  .desc { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+  .question {
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+  }
+  .question:last-child { border-bottom: none; }
+  .qtext {
+    font-size: 16px; color: var(--navy);
+    font-weight: 500; margin-bottom: 4px;
+  }
+  .qhelp { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .opt-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .opt {
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 12px 14px; cursor: pointer;
+    transition: all 0.15s; text-align: center;
+    font-size: 14px; background: var(--paper);
+    user-select: none;
+  }
+  .opt:hover { border-color: var(--gold); }
+  .opt.active {
+    border-color: var(--navy); background: var(--navy);
+    color: var(--gold); font-weight: 500;
+  }
+  .score-panel {
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    color: var(--paper); border-radius: 14px;
+    padding: 36px; margin-top: 36px; text-align: center;
+  }
+  .score-display {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(64px, 12vw, 100px);
+    font-weight: 700; color: var(--gold);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .score-label {
+    font-size: 14px; color: rgba(255,255,255,0.75);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 24px;
+  }
+  .grade-row {
+    display: inline-flex; gap: 14px;
+    background: rgba(0,0,0,0.25); padding: 16px 24px;
+    border-radius: 10px; margin-bottom: 24px;
+  }
+  .grade {
+    font-family: 'Fraunces', serif; font-size: 36px;
+    color: var(--paper); font-weight: 600;
+  }
+  .grade-desc { text-align: left; }
+  .grade-desc .ttl {
+    font-family: 'Fraunces', serif; color: var(--gold);
+    font-size: 18px; font-weight: 600;
+  }
+  .grade-desc .sub {
+    font-size: 13px; color: rgba(255,255,255,0.75);
+  }
+  .findings { text-align: left; margin-top: 28px; }
+  .findings h3 {
+    font-family: 'Fraunces', serif; color: var(--gold);
+    font-size: 16px; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 10px;
+  }
+  .finding {
+    display: flex; gap: 14px; padding: 14px;
+    margin-bottom: 10px; border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+  }
+  .finding.red { border-left-color: var(--red); }
+  .finding.amber { border-left-color: var(--amber); }
+  .finding.green { border-left-color: var(--green); }
+  .icon {
+    font-size: 22px; flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .finding-body .ft {
+    font-weight: 600; color: var(--paper);
+    font-size: 15px; margin-bottom: 3px;
+  }
+  .finding-body .fd {
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+  .cta-block {
+    background: var(--gold); color: var(--navy);
+    padding: 28px; border-radius: 12px;
+    margin-top: 32px; text-align: center;
+  }
+  .cta-block h3 {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 600; margin-bottom: 8px;
+  }
+  .cta-block p { font-size: 14px; margin-bottom: 18px; }
+  .btn {
+    display: inline-block; padding: 13px 32px;
+    background: var(--navy); color: var(--gold);
+    border: none; border-radius: 8px;
+    font-family: inherit; font-weight: 600;
+    font-size: 15px; cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.1s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .disclaimer {
+    font-size: 12px; color: var(--muted);
+    text-align: center; margin-top: 24px; line-height: 1.5;
+  }
+  .hidden { display: none; }
+</style>
+<link rel="icon" type="image/svg+xml" href="brand-assets/favicon.svg">
+<link rel="apple-touch-icon" href="brand-assets/favicon.svg">
+</head>
+<body>
+<div class="shell">
+  <div class="mast">
+    <div class="brand"><em style="font-style: italic; color: var(--gold);">Trust</em> Life Solutions</div>
+    <span class="pill" style="margin-top: 18px;">Free — 3 Minute Scorecard</span>
+    <h1>Is your current life<br />insurance still right?</h1>
+    <p class="lead">Most people who bought a policy more than five years ago are paying too much, carrying too little, or holding a product that no longer fits. This quick scorecard grades your coverage on the same five dimensions we use internally — and tells you whether a review is worth your time.</p>
+  </div>
+
+  <div class="card">
+    <h2>Grade Your Policy</h2>
+    <p class="desc">Answer the questions below. If you don't know an answer, pick the closest fit — you can look up details later. Nothing here is stored on a server.</p>
+
+    <div class="question">
+      <div class="qtext">1. What type of policy do you have?</div>
+      <div class="qhelp">Check your annual statement or the policy face page — the product name usually includes the type.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="type" data-v="term" onclick="pick(this)">Term</div>
+        <div class="opt" data-q="type" data-v="whole" onclick="pick(this)">Whole Life</div>
+        <div class="opt" data-q="type" data-v="ul" onclick="pick(this)">Universal Life</div>
+        <div class="opt" data-q="type" data-v="iul" onclick="pick(this)">Indexed UL (IUL)</div>
+        <div class="opt" data-q="type" data-v="vul" onclick="pick(this)">Variable UL</div>
+        <div class="opt" data-q="type" data-v="unknown" onclick="pick(this)">Not sure</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">2. How long ago did you buy it?</div>
+      <div class="qhelp">Pricing and product design have both improved. The older the policy, the higher the chance of savings.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="age" data-v="1" onclick="pick(this)">Under 2 years</div>
+        <div class="opt" data-q="age" data-v="2" onclick="pick(this)">2–5 years</div>
+        <div class="opt" data-q="age" data-v="3" onclick="pick(this)">5–10 years</div>
+        <div class="opt" data-q="age" data-v="4" onclick="pick(this)">10–20 years</div>
+        <div class="opt" data-q="age" data-v="5" onclick="pick(this)">20+ years</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">3. Has your life changed meaningfully since you bought it?</div>
+      <div class="qhelp">Marriage, divorce, new child, business, home purchase, major income change, health improvement — pick all that resonate, we'll use the biggest.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="change" data-v="major" onclick="pick(this)">Yes — major changes</div>
+        <div class="opt" data-q="change" data-v="some" onclick="pick(this)">Some</div>
+        <div class="opt" data-q="change" data-v="none" onclick="pick(this)">Nothing significant</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">4. Is your coverage amount still enough?</div>
+      <div class="qhelp">A rough benchmark: 10–12× your current annual income plus your mortgage. Well under that = likely underinsured.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="amt" data-v="plenty" onclick="pick(this)">More than I need</div>
+        <div class="opt" data-q="amt" data-v="right" onclick="pick(this)">About right</div>
+        <div class="opt" data-q="amt" data-v="low" onclick="pick(this)">A bit low</div>
+        <div class="opt" data-q="amt" data-v="way-low" onclick="pick(this)">Way too little</div>
+        <div class="opt" data-q="amt" data-v="unknown" onclick="pick(this)">Not sure</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">5. If it's a term policy — how many years are left?</div>
+      <div class="qhelp">If you have whole life or UL, skip this and choose "Not a term policy."</div>
+      <div class="opt-row">
+        <div class="opt" data-q="term-left" data-v="na" onclick="pick(this)">Not a term policy</div>
+        <div class="opt" data-q="term-left" data-v="plenty" onclick="pick(this)">15+ years</div>
+        <div class="opt" data-q="term-left" data-v="ok" onclick="pick(this)">8–14 years</div>
+        <div class="opt" data-q="term-left" data-v="low" onclick="pick(this)">3–7 years</div>
+        <div class="opt" data-q="term-left" data-v="ending" onclick="pick(this)">Under 3 years</div>
+        <div class="opt" data-q="term-left" data-v="expired" onclick="pick(this)">Already expired / renewing yearly</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">6. Do you have a clear picture of what you're paying, and why?</div>
+      <div class="qhelp">If you can't remember the premium, death benefit, and term length off the top of your head, the policy probably isn't serving you well.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="transparency" data-v="clear" onclick="pick(this)">Crystal clear</div>
+        <div class="opt" data-q="transparency" data-v="vague" onclick="pick(this)">Vaguely</div>
+        <div class="opt" data-q="transparency" data-v="confused" onclick="pick(this)">Honestly, no</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">7. Have you had a review or contact from your agent in the past 3 years?</div>
+      <div class="qhelp">Policies change. Your life changes. Carriers change. A good agent reaches out annually.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="review" data-v="yes" onclick="pick(this)">Yes, recently</div>
+        <div class="opt" data-q="review" data-v="once" onclick="pick(this)">Once, years ago</div>
+        <div class="opt" data-q="review" data-v="no" onclick="pick(this)">No</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">8. Your health today — better, same, or worse than when you bought?</div>
+      <div class="qhelp">If you were rated up when you bought (for example, for high blood pressure or weight), you may now qualify for a far better class.</div>
+      <div class="opt-row">
+        <div class="opt" data-q="health" data-v="better" onclick="pick(this)">Significantly better</div>
+        <div class="opt" data-q="health" data-v="slightly-better" onclick="pick(this)">Slightly better</div>
+        <div class="opt" data-q="health" data-v="same" onclick="pick(this)">About the same</div>
+        <div class="opt" data-q="health" data-v="worse" onclick="pick(this)">Worse</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">9. If you have cash value (whole life, UL, IUL, VUL), do you know what it is right now?</div>
+      <div class="qhelp">If "no," that's a flag — many older cash-value policies are under-funded and lapse risk is real. If this is term, pick "Not applicable."</div>
+      <div class="opt-row">
+        <div class="opt" data-q="cv" data-v="na" onclick="pick(this)">Not applicable (term)</div>
+        <div class="opt" data-q="cv" data-v="know" onclick="pick(this)">Yes, I know it</div>
+        <div class="opt" data-q="cv" data-v="rough" onclick="pick(this)">Roughly</div>
+        <div class="opt" data-q="cv" data-v="no" onclick="pick(this)">No idea</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>Final Questions</h2>
+    <p class="desc">For a fully personalized review, tell us a bit about the goal of your coverage. These don't affect the score but help us give better recommendations.</p>
+
+    <div class="question">
+      <div class="qtext">Who are you primarily trying to protect?</div>
+      <div class="opt-row">
+        <div class="opt" data-q="who" data-v="spouse" onclick="pick(this)">Spouse</div>
+        <div class="opt" data-q="who" data-v="kids" onclick="pick(this)">Kids / family</div>
+        <div class="opt" data-q="who" data-v="business" onclick="pick(this)">Business / partner</div>
+        <div class="opt" data-q="who" data-v="estate" onclick="pick(this)">Estate / legacy</div>
+        <div class="opt" data-q="who" data-v="self" onclick="pick(this)">Final expenses</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qtext">Your age range</div>
+      <div class="opt-row">
+        <div class="opt" data-q="ageb" data-v="young" onclick="pick(this)">Under 35</div>
+        <div class="opt" data-q="ageb" data-v="mid" onclick="pick(this)">35–50</div>
+        <div class="opt" data-q="ageb" data-v="older" onclick="pick(this)">50–65</div>
+        <div class="opt" data-q="ageb" data-v="senior" onclick="pick(this)">65+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="score-panel" class="score-panel hidden">
+    <div class="score-display" id="score">—</div>
+    <div class="score-label">Policy Health Score</div>
+    <div class="grade-row">
+      <div class="grade" id="grade-letter">—</div>
+      <div class="grade-desc">
+        <div class="ttl" id="grade-title">—</div>
+        <div class="sub" id="grade-subtitle">—</div>
+      </div>
+    </div>
+    <div class="findings">
+      <h3>What we found</h3>
+      <div id="findings-list"></div>
+    </div>
+    <div class="cta-block">
+      <h3 id="cta-headline">Let's talk through a real review</h3>
+      <p id="cta-sub">A 20-minute call. No obligation. If your current policy is the right fit, I'll tell you so — in writing.</p>
+      <a class="btn" href="tel:4255679668">Call Chris: (425) 567-9668</a>
+      <p style="font-size: 13px; margin-top: 14px; color: var(--navy);">or email <a href="mailto:chris@trustlifesolutions.com" style="color: var(--navy); font-weight: 600;">chris@trustlifesolutions.com</a></p>
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    Trust Life Solutions · Chris Ihler · Licensed in ID · WA · OR · CA · NV · MI · OH · VA · SC (NPN 21599086)<br>
+    This scorecard provides general guidance only and is not a quote, offer to insure, or recommendation. A qualified review requires examination of your actual policy documents.
+  </p>
+</div>
+
+<script>
+const answers = {};
+
+function pick(el) {
+  const q = el.dataset.q;
+  document.querySelectorAll(`[data-q="${q}"]`).forEach(e => e.classList.remove('active'));
+  el.classList.add('active');
+  answers[q] = el.dataset.v;
+  tryScore();
+}
+
+function tryScore() {
+  const required = ['type', 'age', 'change', 'amt', 'term-left', 'transparency', 'review', 'health', 'cv', 'who', 'ageb'];
+  const done = required.every(q => answers[q]);
+  if (done) {
+    setTimeout(() => {
+      renderScore();
+      document.getElementById('score-panel').classList.remove('hidden');
+      document.getElementById('score-panel').scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  }
+}
+
+function renderScore() {
+  let score = 100;
+  const findings = [];
+
+  // TYPE
+  if (answers.type === 'unknown') {
+    score -= 10;
+    findings.push({ c: 'amber', i: '?', t: 'You\'re not sure which product you have', d: 'This is surprisingly common. A quick review of your contract will tell us — and it matters, because the recommendation is very different for term vs. whole vs. IUL.' });
+  }
+  if (answers.type === 'vul') {
+    score -= 8;
+    findings.push({ c: 'amber', i: '⚠', t: 'Variable UL is market-risk cash-value coverage', d: 'VUL policies can be powerful but are among the easiest to mismanage. Many older VULs are under-funded today — worth modeling a replacement or restructure.' });
+  }
+
+  // AGE
+  if (answers.age === '5') {
+    score -= 15;
+    findings.push({ c: 'red', i: '↻', t: 'Policy is 20+ years old', d: 'Pricing and product design have improved meaningfully since then. Even accounting for your age today, a review often saves 20–40%.' });
+  } else if (answers.age === '4') {
+    score -= 10;
+    findings.push({ c: 'amber', i: '↻', t: 'Policy is 10–20 years old', d: 'Still a common savings window. Carriers have released new term products at lower rates; long-term products have better cash-value designs.' });
+  } else if (answers.age === '3') {
+    score -= 5;
+    findings.push({ c: 'amber', i: 'i', t: 'Policy is 5–10 years old', d: 'Worth a look. Even a small rate-class improvement from better health can meaningfully reduce premium.' });
+  }
+
+  // CHANGE
+  if (answers.change === 'major') {
+    score -= 12;
+    findings.push({ c: 'red', i: '!', t: 'Major life changes since purchase', d: 'New spouse, new child, new mortgage, new business — any one of these usually makes the original coverage amount wrong. Review beneficiaries and amount immediately.' });
+  } else if (answers.change === 'some') {
+    score -= 5;
+    findings.push({ c: 'amber', i: 'i', t: 'Some changes since purchase', d: 'Worth confirming the beneficiary designations and face amount still match your actual life.' });
+  }
+
+  // AMOUNT
+  if (answers.amt === 'way-low') {
+    score -= 18;
+    findings.push({ c: 'red', i: '↑', t: 'Coverage is too low', d: 'The most common and most expensive gap. Underinsurance costs nothing until it costs everything. Quick fix: layer a term policy on top of what you have.' });
+  } else if (answers.amt === 'low') {
+    score -= 8;
+    findings.push({ c: 'amber', i: '↑', t: 'Coverage is a bit low', d: 'Supplementing with a small second policy is usually cheaper than replacing. We can model both.' });
+  } else if (answers.amt === 'plenty') {
+    score -= 3;
+    findings.push({ c: 'amber', i: '↓', t: 'Possibly over-insured', d: 'Being over-insured means you\'re paying for coverage you don\'t need. A review can right-size without reducing protection where it matters.' });
+  } else if (answers.amt === 'unknown') {
+    score -= 6;
+    findings.push({ c: 'amber', i: '?', t: 'You\'re not sure if the amount is right', d: 'We use the DIME method — Debt, Income replacement, Mortgage, Education. Takes five minutes to know your actual need.' });
+  }
+
+  // TERM LEFT
+  if (answers['term-left'] === 'ending' || answers['term-left'] === 'expired') {
+    score -= 20;
+    findings.push({ c: 'red', i: '⏰', t: 'Term coverage is ending or has expired', d: 'This is the biggest "uh-oh" in life insurance. Once a term expires, annual renewal premiums skyrocket. You usually want to convert or replace well before it ends.' });
+  } else if (answers['term-left'] === 'low') {
+    score -= 12;
+    findings.push({ c: 'red', i: '⏰', t: 'Under 7 years left on your term', d: 'If you\'ll still have dependents, a mortgage, or income-replacement needs past that date, it\'s time to lock in a new policy while you\'re younger and healthier.' });
+  }
+
+  // TRANSPARENCY
+  if (answers.transparency === 'confused') {
+    score -= 10;
+    findings.push({ c: 'red', i: '?', t: 'You don\'t have a clear picture of what you own', d: 'That\'s not your fault — it\'s a signal your current agent hasn\'t been doing their job. A review gives you a one-page summary you can actually understand.' });
+  } else if (answers.transparency === 'vague') {
+    score -= 5;
+  }
+
+  // REVIEW
+  if (answers.review === 'no') {
+    score -= 8;
+    findings.push({ c: 'amber', i: '☎', t: 'No recent contact from your agent', d: 'Most carriers pay agents renewal commissions every year — whether they service you or not. If your agent has gone dark, you\'re paying for service you\'re not receiving.' });
+  }
+
+  // HEALTH
+  if (answers.health === 'better' || answers.health === 'slightly-better') {
+    score -= 4;
+    findings.push({ c: 'green', i: '✓', t: 'Your health is better than when you bought', d: 'Good news — this is the #1 way to save money. Dropping one rate class (e.g. Standard → Preferred) typically cuts premium 15–25%. Worth modeling.' });
+  }
+
+  // CASH VALUE
+  if (answers.cv === 'no') {
+    score -= 10;
+    findings.push({ c: 'red', i: '💰', t: 'You don\'t know your cash value', d: 'In permanent policies, cash value is half the product. If you don\'t know it, the policy isn\'t being managed. Many older cash-value policies are under-funded and at lapse risk — an in-force illustration is essential.' });
+  } else if (answers.cv === 'rough') {
+    score -= 4;
+  }
+
+  score = Math.max(20, score);
+
+  // Build grade
+  let grade, title, subtitle, ctaHead, ctaSub;
+  if (score >= 85) {
+    grade = 'A'; title = 'Your coverage looks solid';
+    subtitle = 'Few red flags. A quick review confirms everything is still working for you.';
+    ctaHead = 'Let\'s do a final check';
+    ctaSub = 'A 15-minute review confirms your policy is still the right fit. Free, no obligation.';
+  } else if (score >= 70) {
+    grade = 'B'; title = 'Good, but worth a tune-up';
+    subtitle = 'A few areas where you could save money or fill gaps.';
+    ctaHead = 'Let\'s find those savings';
+    ctaSub = 'A 20-minute review typically finds $300–$1,200 a year in savings or better coverage.';
+  } else if (score >= 55) {
+    grade = 'C'; title = 'Some real issues to address';
+    subtitle = 'Your coverage is likely either wrong amount, wrong product, or overpriced for your current health.';
+    ctaHead = 'Let\'s fix what\'s not working';
+    ctaSub = 'Worth a proper review. We\'ll compare your existing policy to the market and give you a plain-English scorecard.';
+  } else {
+    grade = 'D'; title = 'Serious review needed';
+    subtitle = 'Multiple flags. Odds are high we can improve your situation significantly — either better coverage, lower cost, or both.';
+    ctaHead = 'Let\'s talk this week';
+    ctaSub = 'This one merits a real conversation. I can usually tell in 10 minutes whether a change makes sense.';
+  }
+
+  document.getElementById('score').textContent = score;
+  document.getElementById('grade-letter').textContent = grade;
+  document.getElementById('grade-title').textContent = title;
+  document.getElementById('grade-subtitle').textContent = subtitle;
+  document.getElementById('cta-headline').textContent = ctaHead;
+  document.getElementById('cta-sub').textContent = ctaSub;
+
+  const fhtml = findings.length > 0
+    ? findings.map(f => `<div class="finding ${f.c}"><div class="icon">${f.i}</div><div class="finding-body"><div class="ft">${f.t}</div><div class="fd">${f.d}</div></div></div>`).join('')
+    : '<div class="finding green"><div class="icon">✓</div><div class="finding-body"><div class="ft">No major red flags</div><div class="fd">Your current coverage appears to fit your situation well. A confirmation review is still worthwhile — things change.</div></div></div>';
+  document.getElementById('findings-list').innerHTML = fhtml;
+}
+</script>
+</body>
+</html>

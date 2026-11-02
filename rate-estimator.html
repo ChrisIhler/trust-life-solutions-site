@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free life insurance rate estimator. Instantly see what term life costs at your age and health — no email required.">
+<title>Life Insurance Rate Estimator — Trust Life Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1F3D; --navy-deep: #061428; --navy-light: #1A3057;
+    --gold: #C5A572; --gold-bright: #D4B886; --gold-soft: #E8D9B8;
+    --cream: #F8F5EF; --cream-warm: #EFEBE0;
+    --charcoal: #1A1A1A; --stone: #6B6B6B; --line: #E5DFD3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.55; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+
+  nav { background: white; border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 20px 32px; }
+  .nav-phone { font-family: 'Fraunces', serif; font-size: 18px; color: var(--navy); text-decoration: none; }
+  .nav-phone span { color: var(--gold); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; display: block; font-family: 'Instrument Sans', sans-serif; }
+
+  .hero-header { padding: 60px 0 40px; background: radial-gradient(ellipse at top, rgba(197, 165, 114, 0.08), transparent), var(--cream); border-bottom: 1px solid var(--line); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(36px, 5vw, 54px); letter-spacing: -0.03em; line-height: 1.05; color: var(--navy); margin-bottom: 16px; }
+  h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .hero-lede { font-size: 18px; color: var(--stone); max-width: 640px; line-height: 1.55; }
+
+  .calc-section { padding: 60px 0 100px; }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+  @media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr; } }
+
+  .form-card { background: white; padding: 40px; border-radius: 4px; border: 1px solid var(--line); box-shadow: 0 2px 30px rgba(10, 31, 61, 0.04); position: sticky; top: 32px; }
+  @media (max-width: 900px) { .form-card { position: static; } }
+  @media (max-width: 500px) { .form-card { padding: 28px 24px; } }
+  .form-group { margin-bottom: 24px; }
+  .form-group-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.01em; }
+  .form-group-desc { font-size: 13px; color: var(--stone); margin-bottom: 24px; }
+
+  label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+  .field { margin-bottom: 20px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  input[type="number"], select {
+    width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 2px;
+    font-family: inherit; font-size: 15px; color: var(--charcoal); background: var(--cream);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--gold); background: white; }
+
+  .radio-group { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .radio-group.three { grid-template-columns: repeat(3, 1fr); }
+  .radio-group.four { grid-template-columns: repeat(4, 1fr); }
+  .radio-option {
+    position: relative; cursor: pointer; text-align: center;
+    padding: 12px 8px; background: var(--cream); border: 1px solid var(--line);
+    border-radius: 2px; font-size: 13px; font-weight: 500; color: var(--charcoal);
+    transition: all 0.15s;
+  }
+  .radio-option input { position: absolute; opacity: 0; }
+  .radio-option:has(input:checked) { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+  .radio-option:hover:not(:has(input:checked)) { border-color: var(--gold); }
+
+  /* RESULT */
+  .results { }
+  .results-header { margin-bottom: 24px; }
+  .results-title { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 6px; }
+  .results-sub { color: var(--stone); font-size: 14px; }
+
+  .quote-card {
+    background: white; padding: 28px 32px; border-radius: 4px;
+    border: 1px solid var(--line); margin-bottom: 16px;
+    transition: all 0.2s; position: relative;
+  }
+  .quote-card.recommended { border-color: var(--gold); border-width: 2px; box-shadow: 0 8px 32px rgba(197, 165, 114, 0.15); }
+  .quote-card.recommended::before {
+    content: 'RECOMMENDED'; position: absolute; top: -10px; left: 24px;
+    background: var(--gold); color: var(--navy); padding: 4px 12px;
+    font-size: 10px; letter-spacing: 0.15em; font-weight: 600; border-radius: 2px;
+  }
+  .quote-flex { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .quote-term { font-family: 'Fraunces', serif; font-size: 22px; color: var(--navy); font-weight: 500; }
+  .quote-term-sub { font-size: 12px; color: var(--stone); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; margin-top: 4px; }
+  .quote-price { text-align: right; }
+  .quote-price-big { font-family: 'Fraunces', serif; font-size: 36px; color: var(--gold); font-weight: 300; line-height: 1; letter-spacing: -0.02em; }
+  .quote-price-sub { font-size: 12px; color: var(--stone); margin-top: 4px; font-weight: 500; }
+  .quote-detail { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--stone); line-height: 1.55; }
+
+  .results-cta { background: var(--navy); color: var(--cream); padding: 32px; border-radius: 4px; margin-top: 24px; position: relative; overflow: hidden; }
+  .results-cta::before { content: ''; position: absolute; top: 0; right: 0; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle at top right, var(--gold) 0%, transparent 70%); opacity: 0.15; }
+  .results-cta h3 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--cream); margin-bottom: 8px; position: relative; font-weight: 500; }
+  .results-cta h3 em { color: var(--gold); font-style: italic; }
+  .results-cta p { color: #C8CCD6; font-size: 14px; line-height: 1.55; margin-bottom: 18px; position: relative; }
+  .cta-btn { display: block; width: 100%; padding: 16px; text-align: center; background: var(--gold); color: var(--navy); border-radius: 2px; font-weight: 600; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; position: relative; }
+  .cta-btn:hover { background: var(--gold-bright); }
+  .cta-phone-inline { display: block; text-align: center; color: var(--cream); text-decoration: none; font-family: 'Fraunces', serif; font-size: 16px; margin-top: 12px; position: relative; }
+  .cta-phone-inline span { color: var(--gold); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; display: block; font-family: 'Instrument Sans', sans-serif; margin-bottom: 2px; }
+
+  /* INFO */
+  .info-section { background: var(--cream-warm); padding: 80px 0; border-top: 1px solid var(--line); }
+  .info-inner { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+  .info-section h2 { font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 400; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; }
+  .info-section h2 em { font-style: italic; color: var(--gold); }
+  .info-section h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--navy); margin-top: 32px; margin-bottom: 12px; }
+  .info-section p { color: var(--charcoal); margin-bottom: 16px; line-height: 1.65; }
+  .class-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+  @media (max-width: 600px) { .class-grid { grid-template-columns: 1fr; } }
+  .class-card { background: white; padding: 24px; border-radius: 3px; border-left: 3px solid var(--gold); }
+  .class-card h4 { font-family: 'Fraunces', serif; font-size: 16px; color: var(--navy); margin-bottom: 6px; font-weight: 500; }
+  .class-card p { font-size: 13px; color: var(--stone); line-height: 1.55; margin-bottom: 0; }
+
+  footer { background: var(--navy-deep); color: #9AA3B5; padding: 48px 0; font-size: 13px; text-align: center; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  .disclaimer { font-size: 11px; color: var(--stone); margin-top: 16px; line-height: 1.55; font-style: italic; }
+</style>
+<link rel="icon" type="image/svg+xml" href="brand-assets/favicon.svg">
+<link rel="apple-touch-icon" href="brand-assets/favicon.svg">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="text-decoration:none;">
+      <svg width="240" height="38" viewBox="0 0 240 38" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4 L28 4 L28 22 C28 30 16 34 16 34 C16 34 4 30 4 22 Z" fill="#0A1F3D" stroke="#C5A572" stroke-width="1.3"/>
+        <text x="16" y="22" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600" fill="#C5A572" text-anchor="middle">T</text>
+        <text x="40" y="25" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#0A1F3D" letter-spacing="-0.3">
+          <tspan font-style="italic">Trust</tspan> Life Solutions
+        </text>
+      </svg>
+    </a>
+    <a href="tel:+14255679668" class="nav-phone">
+      <span>Call or Text</span>
+      (425) 567-9668
+    </a>
+  </div>
+</nav>
+
+<section class="hero-header">
+  <div class="container">
+    <div class="eyebrow">Instant Rate Estimator</div>
+    <h1>What does term life <em>actually cost?</em></h1>
+    <p class="hero-lede">See ballpark monthly rates for term life insurance at your age, gender, health, and desired coverage. No email, no phone, no signup — just the numbers.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="container">
+    <div class="calc-grid">
+
+      <div class="form-card">
+        <div class="form-group">
+          <div class="form-group-title">Your Info</div>
+          <div class="form-group-desc">Rates are based on age, gender, health class, and coverage.</div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="age">Age</label>
+              <input type="number" id="age" value="40" min="18" max="80">
+            </div>
+            <div class="field">
+              <label>Gender</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="male" checked> Male
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="female"> Female
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Coverage</div>
+          <div class="form-group-desc">How much of a death benefit?</div>
+
+          <div class="radio-group four">
+            <label class="radio-option">
+              <input type="radio" name="coverage" value="250000"> $250K
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="coverage" value="500000" checked> $500K
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="coverage" value="750000"> $750K
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="coverage" value="1000000"> $1M
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-title">Health Class</div>
+          <div class="form-group-desc">Be honest — you'll get a real quote after the estimate.</div>
+
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="health" value="preferred_plus" checked> Excellent
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="health" value="preferred"> Good
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="health" value="standard"> Average
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="health" value="standard_smoker"> Smoker
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="results">
+        <div class="results-header">
+          <div class="results-title">Your Estimated Monthly Rates</div>
+          <div class="results-sub">Approximate premiums from A-rated carriers, based on industry rate data for your profile.</div>
+        </div>
+
+        <div class="quote-card" id="quote10">
+          <div class="quote-flex">
+            <div>
+              <div class="quote-term">10-Year Term</div>
+              <div class="quote-term-sub">Shortest · Cheapest</div>
+            </div>
+            <div class="quote-price">
+              <div class="quote-price-big" id="price10">$—</div>
+              <div class="quote-price-sub">per month</div>
+            </div>
+          </div>
+          <div class="quote-detail">
+            Rate locked for 10 years. Good fit for specific shorter-term needs like 10 years left on a mortgage or kids entering college.
+          </div>
+        </div>
+
+        <div class="quote-card recommended" id="quote20">
+          <div class="quote-flex">
+            <div>
+              <div class="quote-term">20-Year Term</div>
+              <div class="quote-term-sub">Most Popular</div>
+            </div>
+            <div class="quote-price">
+              <div class="quote-price-big" id="price20">$—</div>
+              <div class="quote-price-sub">per month</div>
+            </div>
+          </div>
+          <div class="quote-detail">
+            Rate locked for 20 years. The sweet spot for most families — covers the years kids are home, mortgages are paid down, and peak earning happens.
+          </div>
+        </div>
+
+        <div class="quote-card" id="quote30">
+          <div class="quote-flex">
+            <div>
+              <div class="quote-term">30-Year Term</div>
+              <div class="quote-term-sub">Longest · Most Protection</div>
+            </div>
+            <div class="quote-price">
+              <div class="quote-price-big" id="price30">$—</div>
+              <div class="quote-price-sub">per month</div>
+            </div>
+          </div>
+          <div class="quote-detail">
+            Rate locked for 30 years. Best for younger buyers or people with long mortgages. Premium is ~70% higher than 20-year but you're covered much longer.
+          </div>
+        </div>
+
+        <div class="results-cta">
+          <h3>This is an estimate. <em>Let's get you a real quote.</em></h3>
+          <p>Actual rates depend on carrier, state, and full underwriting. We shop 20+ carriers to find the one that will underwrite your specific situation at the best price.</p>
+          <a href="/quote" class="cta-btn">Get My Real Quote →</a>
+          <a href="tel:+14255679668" class="cta-phone-inline">
+            <span>Or Call Direct</span>
+            (425) 567-9668
+          </a>
+        </div>
+
+        <div class="disclaimer">
+          Rate estimates are based on publicly available industry data for a non-tobacco applicant in good health and do not constitute a quote or offer of insurance. Actual premiums depend on carrier underwriting, state regulations, exact age, exact health condition, and other factors. All insurance applications are subject to medical review and carrier approval.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="info-inner">
+    <div class="eyebrow">Understanding the Numbers</div>
+    <h2>Why rates <em>vary so much.</em></h2>
+    <p>Life insurance pricing is based on actuarial risk — how likely the carrier is to pay out during the term. Five factors drive 95% of your rate:</p>
+
+    <div class="class-grid">
+      <div class="class-card">
+        <h4>Age</h4>
+        <p>The single largest factor. Rates roughly double every 10 years. Locking in young saves thousands.</p>
+      </div>
+      <div class="class-card">
+        <h4>Gender</h4>
+        <p>Women live longer statistically, so women pay less — typically 15–25% less than men at the same age.</p>
+      </div>
+      <div class="class-card">
+        <h4>Tobacco Use</h4>
+        <p>Any nicotine — cigarettes, cigars, vaping, chewing — puts you in "tobacco" rating, 2–3x standard rates.</p>
+      </div>
+      <div class="class-card">
+        <h4>Health</h4>
+        <p>Blood pressure, cholesterol, BMI, family history, diagnoses. Classes: Preferred Plus, Preferred, Standard Plus, Standard, Substandard.</p>
+      </div>
+    </div>
+
+    <h3>What "Health Class" actually means</h3>
+    <p><strong>Preferred Plus / Super Preferred:</strong> The best rate. Nonsmoker, excellent health, ideal BMI, no family history of early cancer/heart disease, normal labs, no medications.</p>
+    <p><strong>Preferred:</strong> Excellent health with one or two minor factors (well-controlled cholesterol, slightly elevated BMI).</p>
+    <p><strong>Standard Plus / Standard:</strong> Average health. One chronic condition being managed (high blood pressure, cholesterol). Most people land here.</p>
+    <p><strong>Substandard (Rated):</strong> A significant health history. Coverage available but at elevated rates. Different carriers underwrite differently — this is where an independent advisor earns their keep.</p>
+
+    <h3>The independent advantage</h3>
+    <p>Every carrier has different underwriting standards. One carrier might rate your well-controlled diabetes as "Standard." Another might flag it as "Substandard" and charge 40% more for the exact same coverage. A captive agent only sees their company's answer. We shop 20+ carriers and find the one that underwrites you best.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Ihler Ventures LLC, d/b/a Trust Life Solutions. &middot; <a href="/">Home</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a>
+    <p style="margin-top: 12px; font-size: 11px; color: #6C7487;">Chris Ihler, Licensed Insurance Advisor · NPN 21599086 · Licensed in WA, OR, CA, NV, ID, MI, OH, VA, SC</p>
+  </div>
+</footer>
+
+<script>
+  // Rate base table — approximate monthly rates from public industry data
+  // Structure: rateTable[termLength][health][age][gender] = monthly rate for $500k
+  // We interpolate for ages in between
+  const rateTable = {
+    '10': {
+      'preferred_plus': {
+        25: { male: 14, female: 12 },
+        30: { male: 14, female: 12 },
+        35: { male: 16, female: 13 },
+        40: { male: 17, female: 14 },
+        45: { male: 25, female: 19 },
+        50: { male: 40, female: 29 },
+        55: { male: 65, female: 48 },
+        60: { male: 105, female: 75 },
+        65: { male: 175, female: 120 },
+        70: { male: 310, female: 210 }
+      },
+      'preferred': {
+        25: { male: 17, female: 14 },
+        30: { male: 17, female: 14 },
+        35: { male: 19, female: 16 },
+        40: { male: 22, female: 18 },
+        45: { male: 32, female: 24 },
+        50: { male: 50, female: 37 },
+        55: { male: 80, female: 60 },
+        60: { male: 135, female: 95 },
+        65: { male: 220, female: 150 },
+        70: { male: 390, female: 265 }
+      },
+      'standard': {
+        25: { male: 24, female: 20 },
+        30: { male: 24, female: 20 },
+        35: { male: 27, female: 22 },
+        40: { male: 32, female: 27 },
+        45: { male: 48, female: 36 },
+        50: { male: 75, female: 56 },
+        55: { male: 120, female: 90 },
+        60: { male: 200, female: 140 },
+        65: { male: 330, female: 225 },
+        70: { male: 580, female: 395 }
+      },
+      'standard_smoker': {
+        25: { male: 60, female: 48 },
+        30: { male: 62, female: 50 },
+        35: { male: 75, female: 60 },
+        40: { male: 105, female: 80 },
+        45: { male: 175, female: 130 },
+        50: { male: 280, female: 200 },
+        55: { male: 450, female: 320 },
+        60: { male: 720, female: 510 },
+        65: { male: 1150, female: 810 },
+        70: { male: 1850, female: 1300 }
+      }
+    },
+    '20': {
+      'preferred_plus': {
+        25: { male: 18, female: 15 },
+        30: { male: 18, female: 15 },
+        35: { male: 23, female: 20 },
+        40: { male: 28, female: 24 },
+        45: { male: 45, female: 38 },
+        50: { male: 69, female: 54 },
+        55: { male: 120, female: 95 },
+        60: { male: 200, female: 140 },
+        65: { male: 355, female: 240 },
+        70: { male: 620, female: 425 }
+      },
+      'preferred': {
+        25: { male: 22, female: 18 },
+        30: { male: 22, female: 18 },
+        35: { male: 28, female: 23 },
+        40: { male: 35, female: 29 },
+        45: { male: 55, female: 46 },
+        50: { male: 85, female: 67 },
+        55: { male: 150, female: 118 },
+        60: { male: 250, female: 175 },
+        65: { male: 445, female: 300 },
+        70: { male: 775, female: 530 }
+      },
+      'standard': {
+        25: { male: 30, female: 25 },
+        30: { male: 30, female: 25 },
+        35: { male: 38, female: 31 },
+        40: { male: 48, female: 40 },
+        45: { male: 75, female: 63 },
+        50: { male: 120, female: 95 },
+        55: { male: 210, female: 165 },
+        60: { male: 350, female: 245 },
+        65: { male: 625, female: 420 },
+        70: { male: 1085, female: 745 }
+      },
+      'standard_smoker': {
+        25: { male: 75, female: 60 },
+        30: { male: 78, female: 62 },
+        35: { male: 100, female: 80 },
+        40: { male: 145, female: 115 },
+        45: { male: 245, female: 185 },
+        50: { male: 400, female: 300 },
+        55: { male: 680, female: 510 },
+        60: { male: 1100, female: 780 },
+        65: { male: 1850, female: 1250 },
+        70: { male: 3100, female: 2200 }
+      }
+    },
+    '30': {
+      'preferred_plus': {
+        25: { male: 25, female: 22 },
+        30: { male: 28, female: 24 },
+        35: { male: 36, female: 30 },
+        40: { male: 49, female: 39 },
+        45: { male: 75, female: 60 },
+        50: { male: 124, female: 93 },
+        55: { male: 215, female: 160 },
+        60: { male: 385, female: 265 }
+      },
+      'preferred': {
+        25: { male: 31, female: 26 },
+        30: { male: 35, female: 29 },
+        35: { male: 45, female: 37 },
+        40: { male: 60, female: 48 },
+        45: { male: 92, female: 73 },
+        50: { male: 152, female: 114 },
+        55: { male: 265, female: 195 },
+        60: { male: 470, female: 325 }
+      },
+      'standard': {
+        25: { male: 42, female: 36 },
+        30: { male: 48, female: 40 },
+        35: { male: 62, female: 51 },
+        40: { male: 82, female: 66 },
+        45: { male: 125, female: 100 },
+        50: { male: 210, female: 158 },
+        55: { male: 370, female: 270 },
+        60: { male: 655, female: 450 }
+      },
+      'standard_smoker': {
+        25: { male: 105, female: 85 },
+        30: { male: 125, female: 100 },
+        35: { male: 170, female: 135 },
+        40: { male: 240, female: 190 },
+        45: { male: 385, female: 290 },
+        50: { male: 640, female: 475 },
+        55: { male: 1100, female: 810 },
+        60: { male: 1900, female: 1300 }
+      }
+    }
+  };
+
+  function interpolate(tableForClass, age, gender) {
+    // Clamp age to 25-70 range for the data we have
+    age = Math.max(25, Math.min(70, age));
+    const ages = Object.keys(tableForClass).map(Number).sort((a, b) => a - b);
+
+    // Find bracket
+    let lower = ages[0];
+    let upper = ages[ages.length - 1];
+    for (let i = 0; i < ages.length - 1; i++) {
+      if (age >= ages[i] && age <= ages[i + 1]) {
+        lower = ages[i];
+        upper = ages[i + 1];
+        break;
+      }
+    }
+    if (age >= ages[ages.length - 1]) {
+      return tableForClass[ages[ages.length - 1]][gender];
+    }
+    if (age <= ages[0]) {
+      return tableForClass[ages[0]][gender];
+    }
+
+    const lowRate = tableForClass[lower][gender];
+    const highRate = tableForClass[upper][gender];
+    const t = (age - lower) / (upper - lower);
+    return lowRate + (highRate - lowRate) * t;
+  }
+
+  function scaleByCoverage(rateFor500k, coverage) {
+    // Rates don't scale perfectly linearly — there's a fixed policy cost
+    // Rough approximation: policy cost ~ $8/mo + per-thousand rate
+    const policyCost = 8;
+    const perThousandFor500k = (rateFor500k - policyCost) / 500;
+    const scaled = policyCost + (perThousandFor500k * (coverage / 1000));
+    return Math.max(scaled, rateFor500k * 0.35); // floor
+  }
+
+  function calculate() {
+    const age = +document.getElementById('age').value || 40;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const coverage = +document.querySelector('input[name="coverage"]:checked').value;
+    const health = document.querySelector('input[name="health"]:checked').value;
+
+    ['10', '20', '30'].forEach(term => {
+      const tbl = rateTable[term][health];
+      const rate500k = interpolate(tbl, age, gender);
+      const rate = scaleByCoverage(rate500k, coverage);
+
+      const card = document.getElementById('quote' + term);
+      const priceEl = document.getElementById('price' + term);
+
+      // 30-year term not available past age 60
+      if (term === '30' && age > 60) {
+        priceEl.innerHTML = 'N/A';
+        card.style.opacity = '0.5';
+      } else {
+        priceEl.innerHTML = '$' + Math.round(rate);
+        card.style.opacity = '1';
+      }
+    });
+  }
+
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', calculate);
+    input.addEventListener('change', calculate);
+  });
+
+  calculate();
+</script>
+
+</body>
+</html>
